@@ -1,0 +1,216 @@
+{
+  "nav": {
+    "product": "Product",
+    "advantages": "Advantages",
+    "team": "Team",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Insight AI",
+    "subtitle": "AI-Powered Education Platform for Hong Kong K-12",
+    "tagline": "Half the Cost, Triple the Value",
+    "description": "The first integrated AI education platform designed specifically for Hong Kong's DSE curriculum system",
+    "cta": "Request Demo",
+    "ctaSecondary": "Learn More"
+  },
+  "problem": {
+    "title": "Transforming Education with AI",
+    "subtitle": "Addressing Critical Gaps in Hong Kong K-12 Education",
+    "teacher": {
+      "title": "Teacher Challenges",
+      "pain1": "15-20 hours weekly on repetitive administrative tasks",
+      "pain2": "Fragmented tools that don't integrate with actual curriculum",
+      "pain3": "Limited capacity for pedagogical innovation"
+    },
+    "student": {
+      "title": "Student Challenges",
+      "pain1": "One-size-fits-all approach fails individual learning needs",
+      "pain2": "Delayed feedback prevents timely intervention",
+      "pain3": "No systematic learning analytics or progress tracking"
+    },
+    "market": {
+      "title": "Market Gap",
+      "pain1": "Mainland platforms incompatible with Hong Kong's DSE system",
+      "pain2": "International products lack localization and are expensive (HKD 100K+)",
+      "pain3": "No mature localized AI education solution for Hong Kong"
+    }
+  },
+  "solution": {
+    "title": "Our Solution",
+    "subtitle": "Four Integrated Modules, One Complete Platform",
+    "module1": {
+      "title": "AI Course Management",
+      "features": ["Smart lesson planning", "Intelligent scheduling", "Progress tracking", "Resource library"]
+    },
+    "module2": {
+      "title": "AI Teaching Assistance",
+      "features": ["Smart assignment generation", "Auto-grading system", "Teaching plan optimization", "Interactive classroom tools"]
+    },
+    "module3": {
+      "title": "AI Student Tutoring",
+      "features": ["24/7 smart Q&A", "Personalized learning paths", "Targeted skill building", "Progress visualization"]
+    },
+    "module4": {
+      "title": "Data Intelligence Services",
+      "features": ["Teaching quality analytics", "Student growth portfolio", "Predictive analytics", "Home-school collaboration"]
+    }
+  },
+  "comparison": {
+    "title": "Why Insight AI Wins",
+    "subtitle": "The Only Localized AI Education Platform for Hong Kong",
+    "tableHeaders": {
+      "feature": "Feature",
+      "mainland": "Mainland Platforms",
+      "international": "International LMS",
+      "traditional": "Traditional Tools",
+      "insightai": "Insight AI"
+    },
+    "rows": {
+      "dse": {
+        "feature": "DSE System Support",
+        "mainland": "❌ Not Compatible",
+        "international": "⚠️ Generic Only",
+        "traditional": "⚠️ Limited",
+        "insightai": "✅ Native Support"
+      },
+      "ai": {
+        "feature": "AI-Powered Features",
+        "mainland": "⚠️ Basic",
+        "international": "❌ None",
+        "traditional": "❌ None",
+        "insightai": "✅ Full Integration"
+      },
+      "price": {
+        "feature": "Annual Cost",
+        "mainland": "N/A",
+        "international": "HKD 100K+",
+        "traditional": "HKD 80K+",
+        "insightai": "HKD 40-60K"
+      },
+      "localization": {
+        "feature": "Hong Kong Localization",
+        "mainland": "❌ None",
+        "international": "❌ None",
+        "traditional": "⚠️ Partial",
+        "insightai": "✅ Complete"
+      },
+      "integration": {
+        "feature": "Complete Platform",
+        "mainland": "⚠️ Fragmented",
+        "international": "⚠️ Fragmented",
+        "traditional": "❌ Single Function",
+        "insightai": "✅ 4-in-1 System"
+      }
+    }
+  },
+  "advantages": {
+    "title": "Core Competitive Advantages",
+    "subtitle": "What Sets Us Apart",
+    "adv1": {
+      "title": "DSE System Expertise",
+      "desc": "Purpose-built for Hong Kong's unique education system, DSE curriculum, and bilingual teaching model"
+    },
+    "adv2": {
+      "title": "Premier Tech Partnership",
+      "desc": "Powered by Tsinghua University's Zhipu AI (GLM-4) with localized model training for Hong Kong education"
+    },
+    "adv3": {
+      "title": "Proven Track Record",
+      "desc": "50+ schools signed for pilot programs, targeting 200 schools by 2025 (14% market share)"
+    },
+    "adv4": {
+      "title": "Price Advantage",
+      "desc": "HKD 40-50K per school per year – 40-50% of international LMS costs with superior functionality"
+    },
+    "adv5": {
+      "title": "Academic Validation",
+      "desc": "Joint research programs with HKU and CityU, published in international EdTech journals"
+    },
+    "adv6": {
+      "title": "Data Security",
+      "desc": "Full PDPO compliance with Hong Kong data residency, ensuring student privacy protection"
+    }
+  },
+  "market": {
+    "title": "Market Opportunity",
+    "subtitle": "Perfect Timing for AI Education Transformation",
+    "stat1": "1,200+ Schools",
+    "stat1desc": "K-12 schools in Hong Kong",
+    "stat2": "HKD 2 Billion",
+    "stat2desc": "Government AI education funding",
+    "stat3": "HKD 1M",
+    "stat3desc": "Average funding per school",
+    "stat4": "800,000",
+    "stat4desc": "Students in Hong Kong K-12"
+  },
+  "team": {
+    "title": "World-Class Team & Partners",
+    "subtitle": "Elite Education, Proven Experience, Strategic Collaboration",
+    "academic": {
+      "title": "Academic Excellence",
+      "icon": "🎓",
+      "highlights": [
+        "Tsinghua University - Top AI research institution",
+        "UC Berkeley - Leading CS & Data Science program",
+        "City University of Hong Kong - HCI & Education AI",
+        "UCLA Trustworthy AI Lab - Cutting-edge AI research"
+      ]
+    },
+    "experience": {
+      "title": "Proven Track Record",
+      "icon": "🚀",
+      "highlights": [
+        "Built multiple 0-to-1 AI products from scratch",
+        "Deployed education platforms serving 100+ schools",
+        "Expertise in AI agents and intelligent systems",
+        "Full-stack development with rapid iteration capability"
+      ]
+    },
+    "collaboration": {
+      "title": "Strategic Partnerships",
+      "icon": "🤝",
+      "highlights": [
+        "Tsinghua Zhipu AI - GLM-4 model partnership",
+        "Baidu AI veterans - Enterprise AI experience",
+        "Hong Kong university professors - Academic validation",
+        "Leading school principals - Real-world insights"
+      ]
+    }
+  },
+  "pricing": {
+    "title": "Pricing Plans",
+    "subtitle": "Flexible Options for Schools of All Sizes",
+    "standard": {
+      "name": "Standard",
+      "price": "HKD 40,000/year",
+      "desc": "For schools with <400 students",
+      "features": ["All 4 core modules", "Bi-monthly training", "Customer support", "Annual reports"]
+    },
+    "professional": {
+      "name": "Professional",
+      "price": "HKD 50,000/year",
+      "desc": "For schools with 400-600 students",
+      "features": ["Everything in Standard", "Dedicated success manager", "Priority support", "Custom integrations"]
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price": "HKD 60,000/year",
+      "desc": "For schools with 600+ students",
+      "features": ["Everything in Professional", "Priority feature access", "Advanced analytics", "White-glove service"]
+    }
+  },
+  "cta": {
+    "title": "Ready to Transform Your School?",
+    "subtitle": "Join 50+ Hong Kong schools already using Insight AI",
+    "button": "Schedule a Demo",
+    "contact": "Or contact us at: info@insight-ai.hk"
+  },
+  "footer": {
+    "company": "Insight AI Limited",
+    "location": "Hong Kong",
+    "rights": "© 2024 Insight AI Limited. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  }
+}
+
