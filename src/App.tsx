@@ -5,11 +5,32 @@ import './App.css';
 
 function App() {
   const { t, i18n } = useTranslation();
+  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
 
   const toggleLanguage = () => {
     const newLang = i18n.language === 'en' ? 'zh' : 'en';
     i18n.changeLanguage(newLang);
   };
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+  };
+
+  // Prevent body scroll when mobile menu is open
+  React.useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [mobileMenuOpen]);
 
   // Animation variants
   const fadeInUp = {
@@ -55,7 +76,9 @@ function App() {
             <span className="logo-icon">🚀</span>
             <span className="logo-text">Insight AI</span>
           </motion.div>
-          <div className="nav-links">
+          
+          {/* Desktop Navigation */}
+          <div className="nav-links desktop-nav">
             <a href="#product">{t('nav.product')}</a>
             <a href="#advantages">{t('nav.advantages')}</a>
             <a href="#team">{t('nav.team')}</a>
@@ -69,8 +92,54 @@ function App() {
               {i18n.language === 'en' ? '繁中' : 'EN'}
             </motion.button>
           </div>
+
+          {/* Mobile Menu Button */}
+          <motion.button 
+            className="mobile-menu-button"
+            onClick={toggleMobileMenu}
+            whileTap={{ scale: 0.9 }}
+          >
+            <span className={`hamburger ${mobileMenuOpen ? 'open' : ''}`}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </motion.button>
         </div>
+
+        {/* Mobile Navigation Menu */}
+        <motion.div 
+          className={`mobile-nav ${mobileMenuOpen ? 'open' : ''}`}
+          initial={false}
+          animate={mobileMenuOpen ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <div className="mobile-nav-content">
+            <a href="#product" onClick={closeMobileMenu}>{t('nav.product')}</a>
+            <a href="#advantages" onClick={closeMobileMenu}>{t('nav.advantages')}</a>
+            <a href="#team" onClick={closeMobileMenu}>{t('nav.team')}</a>
+            <a href="#contact" onClick={closeMobileMenu}>{t('nav.contact')}</a>
+            <motion.button 
+              className="lang-toggle mobile-lang" 
+              onClick={() => { toggleLanguage(); closeMobileMenu(); }}
+              whileTap={{ scale: 0.95 }}
+            >
+              {i18n.language === 'en' ? '繁中' : 'EN'}
+            </motion.button>
+          </div>
+        </motion.div>
       </motion.nav>
+
+      {/* Overlay for mobile menu */}
+      {mobileMenuOpen && (
+        <motion.div 
+          className="mobile-menu-overlay"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={closeMobileMenu}
+        />
+      )}
 
       {/* Hero Section */}
       <section className="hero">
