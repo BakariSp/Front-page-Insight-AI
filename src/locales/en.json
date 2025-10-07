@@ -10,6 +10,8 @@
     "subtitle": "AI-Powered Education Platform for Hong Kong K-12",
     "tagline": "Half the Cost, Triple the Value",
     "description": "The first integrated AI education platform designed specifically for Hong Kong's DSE curriculum system",
+    "badge": "Hong Kong's First AI Education Platform",
+    "partnershipBadge": "Powered by North AI Limited",
     "cta": "Request Demo",
     "ctaSecondary": "Learn More"
   },
@@ -54,6 +56,12 @@
       "title": "Data Intelligence Services",
       "features": ["Teaching quality analytics", "Student growth portfolio", "Predictive analytics", "Home-school collaboration"]
     }
+  },
+  "demo": {
+    "title": "Platform Demo",
+    "subtitle": "See Insight AI in Action",
+    "caption1": "Course Dashboard - Track student progress and performance metrics",
+    "caption2": "Assignment Management - AI-powered grading and personalized feedback"
   },
   "comparison": {
     "title": "Why Insight AI Wins",
@@ -175,6 +183,16 @@
         "Hong Kong university professors - Academic validation",
         "Leading school principals - Real-world insights"
       ]
+    },
+    "partnership": {
+      "title": "Channel Partner",
+      "icon": "🏢",
+      "highlights": [
+        "North AI Limited - Strategic channel partner",
+        "Joint product development and market expansion",
+        "Comprehensive distribution network in Hong Kong",
+        "Dedicated support and service infrastructure"
+      ]
     }
   },
   "pricing": {
@@ -209,6 +227,7 @@
     "company": "Insight AI Limited",
     "location": "Hong Kong",
     "rights": "© 2024 Insight AI Limited. All rights reserved.",
+    "partnership": "Powered by North AI Limited",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service"
   }

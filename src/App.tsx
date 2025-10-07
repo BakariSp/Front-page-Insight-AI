@@ -6,6 +6,19 @@ import './App.css';
 function App() {
   const { t, i18n } = useTranslation();
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+  const [currentSlide, setCurrentSlide] = React.useState(0);
+  const [isAutoPlayPaused, setIsAutoPlayPaused] = React.useState(false);
+
+  const demoSlides = [
+    {
+      image: '/demo/demo-1.png',
+      caption: t('demo.caption1')
+    },
+    {
+      image: '/demo/demo-2.png',
+      caption: t('demo.caption2')
+    }
+  ];
 
   const toggleLanguage = () => {
     const newLang = i18n.language === 'en' ? 'zh' : 'en';
@@ -20,6 +33,21 @@ function App() {
     setMobileMenuOpen(false);
   };
 
+  const nextSlide = () => {
+    setIsAutoPlayPaused(true);
+    setCurrentSlide((prev) => (prev + 1) % demoSlides.length);
+  };
+
+  const prevSlide = () => {
+    setIsAutoPlayPaused(true);
+    setCurrentSlide((prev) => (prev - 1 + demoSlides.length) % demoSlides.length);
+  };
+
+  const goToSlide = (index: number) => {
+    setIsAutoPlayPaused(true);
+    setCurrentSlide(index);
+  };
+
   // Prevent body scroll when mobile menu is open
   React.useEffect(() => {
     if (mobileMenuOpen) {
@@ -31,6 +59,17 @@ function App() {
       document.body.style.overflow = 'unset';
     };
   }, [mobileMenuOpen]);
+
+  // Auto-play carousel
+  React.useEffect(() => {
+    if (isAutoPlayPaused) return;
+    
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % demoSlides.length);
+    }, 5000); // Change slide every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [demoSlides.length, isAutoPlayPaused]);
 
   // Animation variants
   const fadeInUp = {
@@ -155,12 +194,18 @@ function App() {
             variants={staggerContainer}
           >
             <motion.div 
-              className="hero-badge"
+              className="hero-badges"
               variants={fadeInUp}
               transition={{ duration: 0.6 }}
             >
-              <span className="badge-icon">✨</span>
-              <span>Hong Kong's First AI Education Platform</span>
+              <div className="hero-badge">
+                <span className="badge-icon">✨</span>
+                <span>{t('hero.badge')}</span>
+              </div>
+              <div className="hero-badge partnership-badge">
+                <span className="badge-icon">🤝</span>
+                <span>{t('hero.partnershipBadge')}</span>
+              </div>
             </motion.div>
             <motion.h1 
               className="hero-title"
@@ -302,6 +347,96 @@ function App() {
         </div>
       </section>
 
+      {/* Product Demo Section */}
+      <section className="demo">
+        <div className="container">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeInUp}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="section-title">{t('demo.title')}</h2>
+            <p className="section-subtitle">{t('demo.subtitle')}</p>
+          </motion.div>
+          
+          <motion.div 
+            className="demo-carousel"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeInUp}
+            transition={{ duration: 0.8 }}
+          >
+            {/* Carousel Container */}
+            <div className="carousel-container">
+              {/* Previous Button */}
+              <motion.button 
+                className="carousel-button carousel-button-prev"
+                onClick={prevSlide}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                aria-label="Previous slide"
+              >
+                ‹
+              </motion.button>
+
+              {/* Slides */}
+              <div className="carousel-slides">
+                {demoSlides.map((slide, index) => (
+                  <motion.div
+                    key={index}
+                    className={`carousel-slide ${index === currentSlide ? 'active' : ''}`}
+                    initial={false}
+                    animate={{
+                      opacity: index === currentSlide ? 1 : 0,
+                      scale: index === currentSlide ? 1 : 0.95,
+                      x: index === currentSlide ? 0 : index < currentSlide ? -100 : 100
+                    }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                  >
+                    <div className="demo-image-wrapper">
+                      <img 
+                        src={slide.image} 
+                        alt={slide.caption} 
+                        className="demo-image" 
+                      />
+                      <p className="demo-caption">{slide.caption}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Next Button */}
+              <motion.button 
+                className="carousel-button carousel-button-next"
+                onClick={nextSlide}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                aria-label="Next slide"
+              >
+                ›
+              </motion.button>
+            </div>
+
+            {/* Indicators */}
+            <div className="carousel-indicators">
+              {demoSlides.map((_, index) => (
+                <motion.button
+                  key={index}
+                  className={`carousel-indicator ${index === currentSlide ? 'active' : ''}`}
+                  onClick={() => goToSlide(index)}
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.9 }}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Competitive Comparison Section */}
       <section className="comparison">
         <div className="container">
@@ -389,42 +524,6 @@ function App() {
         </div>
       </section>
 
-      {/* Market Stats */}
-      <section className="market">
-        <div className="container">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeInUp}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="section-title">{t('market.title')}</h2>
-            <p className="section-subtitle">{t('market.subtitle')}</p>
-          </motion.div>
-          <motion.div 
-            className="stats-grid"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-          >
-            {['stat1', 'stat2', 'stat3', 'stat4'].map((stat, index) => (
-              <motion.div 
-                key={stat}
-                className="stat-card"
-                variants={scaleIn}
-                transition={{ duration: 0.5 }}
-                whileHover={{ scale: 1.08, rotate: 2 }}
-              >
-                <div className="stat-number">{t(`market.${stat}`)}</div>
-                <div className="stat-label">{t(`market.${stat}desc`)}</div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
       {/* Team Section */}
       <section id="team" className="team">
         <div className="container">
@@ -445,10 +544,10 @@ function App() {
             viewport={{ once: true, margin: "-100px" }}
             variants={staggerContainer}
           >
-            {['academic', 'experience', 'collaboration'].map((pillar, index) => (
+            {['academic', 'experience', 'collaboration', 'partnership'].map((pillar, index) => (
               <motion.div 
                 key={pillar}
-                className="team-pillar-card"
+                className={`team-pillar-card ${pillar === 'partnership' ? 'partnership-card' : ''}`}
                 variants={fadeInUp}
                 transition={{ duration: 0.5 }}
                 whileHover={{ y: -10, boxShadow: "0 20px 40px rgba(0, 0, 0, 0.15)" }}
@@ -650,8 +749,13 @@ function App() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <p>{t('footer.rights')}</p>
-            <p className="footer-made-with">Made with ❤️ in Hong Kong</p>
+            <div className="footer-bottom-content">
+              <div className="footer-copyright">
+                <p>{t('footer.rights')}</p>
+                <p className="footer-partnership">{t('footer.partnership')}</p>
+              </div>
+              <p className="footer-made-with">Made with ❤️ in Hong Kong</p>
+            </div>
           </motion.div>
         </div>
       </footer>
