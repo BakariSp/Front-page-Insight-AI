@@ -543,6 +543,8 @@ html, body {
   font-size: 2.8rem;
   margin-bottom: 1rem;
   filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
+  display: block;
+  text-align: center;
 }
 
 .solution-card h3 {
@@ -1169,11 +1171,20 @@ html, body {
   50% { transform: translate(5%, 5%) scale(1.1); }
 }
 
-.cta .section-title,
-.cta .section-subtitle {
+.cta .section-title {
   color: white;
   position: relative;
   z-index: 1;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  -webkit-text-fill-color: white;
+  background: none;
+}
+
+.cta .section-subtitle {
+  color: rgba(255, 255, 255, 0.95);
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
 }
 
 .contact-info {
@@ -1708,6 +1719,7 @@ html, body {
   .pricing-card li {
     font-size: 0.95rem;
     padding: 0.8rem 0;
+    padding-left: 2rem;
   }
 
   .container {
@@ -1737,22 +1749,33 @@ html, body {
     padding: 1.5rem;
   }
 
+  .solution-card {
+    display: flex;
+    flex-direction: column;
+  }
+
   .problem-icon,
   .solution-icon {
     font-size: 2.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
+    display: block;
+    text-align: center;
+    width: 100%;
+    line-height: 1;
   }
 
   .problem-card h3,
   .solution-card h3 {
     font-size: 1.3rem;
     margin-bottom: 1rem;
+    clear: both;
   }
 
   .problem-card li,
   .solution-card li {
     font-size: 0.9rem;
     padding: 0.5rem 0;
+    padding-left: 2rem;
   }
 
   .advantage-number {
@@ -2012,19 +2035,31 @@ html, body {
     padding: 1.2rem;
   }
 
+  .solution-card {
+    display: flex;
+    flex-direction: column;
+  }
+
   .problem-icon,
   .solution-icon {
     font-size: 2.2rem;
+    display: block;
+    text-align: center;
+    width: 100%;
+    line-height: 1;
+    margin-bottom: 1rem;
   }
 
   .problem-card h3,
   .solution-card h3 {
     font-size: 1.2rem;
+    clear: both;
   }
 
   .problem-card li,
   .solution-card li {
     font-size: 0.85rem;
+    padding-left: 2.2rem;
   }
 
   .comparison-table {
@@ -2091,6 +2126,7 @@ html, body {
 
   .pricing-card li {
     font-size: 0.9rem;
+    padding-left: 2.2rem;
   }
 
   .popular-badge {

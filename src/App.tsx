@@ -642,7 +642,7 @@ function App() {
               {t('cta.subtitle')}
             </motion.p>
             <motion.a 
-              href="mailto:info@insight-ai.hk" 
+              href="mailto:info@insightaihk.com" 
               className="btn btn-primary btn-large"
               variants={scaleIn}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -727,8 +727,7 @@ function App() {
             >
               <h4 className="footer-title">Get in Touch</h4>
               <div className="footer-contact-info">
-                <p>📧 info@insight-ai.hk</p>
-                <p>📞 +852 XXXX XXXX</p>
+                <p>📧 info@insightaihk.com</p>
                 <p>🕐 Mon - Fri, 9:00 - 18:00</p>
               </div>
               <motion.a 
