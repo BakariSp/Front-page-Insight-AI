@@ -1,235 +1,94 @@
 {
   "nav": {
     "product": "產品",
-    "advantages": "優勢",
+    "advantages": "功能",
     "team": "團隊",
     "contact": "聯繫"
   },
   "hero": {
     "title": "Insight AI",
-    "subtitle": "香港K12智能教育平台",
+    "subtitle": "香港首個 All-in-One AI 教育平台",
     "tagline": "一半的價格，三倍的價值",
-    "description": "香港首個專為DSE課程體系設計的整合式AI教育平台",
-    "badge": "香港首個AI教育平台",
+    "description": "專為香港 DSE 課綱、本地教與學流程而設計的 AI 教育基礎設施。",
+    "badge": "香港首個 AI 教育平台",
     "partnershipBadge": "由 North AI Limited 提供支持",
     "cta": "預約演示",
     "ctaSecondary": "了解更多"
   },
-  "problem": {
-    "title": "用AI重塑教育",
-    "subtitle": "解決香港K12教育的關鍵痛點",
+  "roles": {
+    "title": "一個平台",
+    "subtitle": "協助教師、學生與管理層形成高效閉環",
     "teacher": {
-      "title": "教師挑戰",
-      "pain1": "每週花費15-20小時在重複性行政工作",
-      "pain2": "碎片化工具無法與實際課程整合",
-      "pain3": "缺乏教學創新的時間與工具"
+      "title": "教師端",
+      "desc": "打造更快、更一致、更智能的教學流程。AI 批改助手、自動生成報告、完整教學工具庫。"
     },
     "student": {
-      "title": "學生挑戰",
-      "pain1": "一刀切教學模式無法滿足個性化需求",
-      "pain2": "學習反饋滯後，無法及時干預",
-      "pain3": "缺乏系統性的學習數據追蹤"
+      "title": "學生端",
+      "desc": "看得見自己的進步，越學越有效率。AI 智慧講解、線上測驗即時回饋、個人薄弱點分析。"
     },
-    "market": {
-      "title": "市場空白",
-      "pain1": "內地平台無法適配香港DSE體系",
-      "pain2": "國際產品缺乏本地化且價格昂貴（10萬港幣+）",
-      "pain3": "香港缺乏成熟的本地化AI教育產品"
+    "admin": {
+      "title": "管理端",
+      "desc": "即時掌握學校整體運作與學習走勢。全校數據一目了然，支援教學決策。"
     }
   },
-  "solution": {
-    "title": "我們的解決方案",
-    "subtitle": "四大模塊，一站式平台",
-    "module1": {
-      "title": "AI課程管理",
-      "features": ["智能教案生成", "智能排課系統", "課程進度追蹤", "教學資源庫"]
+  "features": {
+    "teacher": {
+      "label": "教師專用",
+      "title": "AI 批改助手",
+      "desc": "批改一致又快速。自訂 Rubric、語氣、學科規範。AI 先批一次，教師只需快速確認，節省超過 120% 時間。",
+      "list": [
+        "一個平台整合所有作業",
+        "自訂 Rubric 與語氣",
+        "科組間可沿用標準"
+      ]
     },
-    "module2": {
-      "title": "AI辅助教學",
-      "features": ["作業智能生成", "自動批改系統", "教學計劃優化", "互動課堂工具"]
+    "data": {
+      "label": "數據洞察",
+      "title": "自動生成班級學習報告",
+      "desc": "想知道哪些題型最常出錯？哪位學生需要支援？Insight AI 自動分析並提供教學建議。",
+      "list": [
+        "題型錯誤分析",
+        "知識點薄弱識別",
+        "下一步教學建議"
+      ]
     },
-    "module3": {
-      "title": "AI學生輔導",
-      "features": ["24/7智能答疑", "個性化學習路徑", "薄弱環節專訓", "學習進度可視化"]
+    "student": {
+      "label": "學生專屬",
+      "title": "Magic Toolkits",
+      "desc": "學習輔助工具、減壓與 Well-being 支援。讓學生真正「看到自己變好」。",
+      "list": [
+        "AI 學習導師",
+        "錯題分析",
+        "成就系統"
+      ]
     },
-    "module4": {
-      "title": "數據智能服務",
-      "features": ["教學質量分析", "學生成長檔案", "預測性分析", "家校協同平台"]
+    "smart_learning": {
+      "label": "智慧學習",
+      "title": "AI 智慧講解",
+      "desc": "比「標準答案」更懂你。依照學生的解題步驟自動調整講解難度，用最能理解的方式解釋。",
+      "list": [
+        "個性化解說",
+        "即時錯誤回饋",
+        "成績趨勢追蹤"
+      ]
     }
   },
   "demo": {
-    "title": "平台演示",
-    "subtitle": "看 Insight AI 如何運作",
-    "caption1": "課程儀表板 - 追蹤學生進度和表現指標",
-    "caption2": "作業管理 - AI智能批改和個性化反饋"
+    "title": "產品演示",
+    "subtitle": "親身體驗 Insight AI 的強大功能"
   },
-  "comparison": {
-    "title": "Insight AI 為何勝出",
-    "subtitle": "香港唯一本地化AI教育平台",
-    "tableHeaders": {
-      "feature": "功能特性",
-      "mainland": "內地平台",
-      "international": "國際LMS系統",
-      "traditional": "傳統工具",
-      "insightai": "Insight AI"
-    },
-    "rows": {
-      "dse": {
-        "feature": "DSE體系支持",
-        "mainland": "❌ 不兼容",
-        "international": "⚠️ 僅通用",
-        "traditional": "⚠️ 有限",
-        "insightai": "✅ 原生支持"
-      },
-      "ai": {
-        "feature": "AI智能功能",
-        "mainland": "⚠️ 基礎",
-        "international": "❌ 無",
-        "traditional": "❌ 無",
-        "insightai": "✅ 完整集成"
-      },
-      "price": {
-        "feature": "年度費用",
-        "mainland": "N/A",
-        "international": "10萬港幣+",
-        "traditional": "8萬港幣+",
-        "insightai": "4-6萬港幣"
-      },
-      "localization": {
-        "feature": "香港本地化",
-        "mainland": "❌ 無",
-        "international": "❌ 無",
-        "traditional": "⚠️ 部分",
-        "insightai": "✅ 完整"
-      },
-      "integration": {
-        "feature": "完整平台",
-        "mainland": "⚠️ 碎片化",
-        "international": "⚠️ 碎片化",
-        "traditional": "❌ 單一功能",
-        "insightai": "✅ 四合一系統"
-      }
-    }
-  },
-  "advantages": {
-    "title": "核心競爭優勢",
-    "subtitle": "我們的與眾不同",
-    "adv1": {
-      "title": "DSE體系專家",
-      "desc": "專為香港獨特的教育體系、DSE課程及中英雙語教學模式設計"
-    },
-    "adv2": {
-      "title": "頂級技術合作",
-      "desc": "與清華大學智譜AI（GLM-4）深度合作，針對香港教育優化本地化模型"
-    },
-    "adv3": {
-      "title": "規模化驗證",
-      "desc": "已有50+所學校簽約試點，2025年目標200所學校（14%市場份額）"
-    },
-    "adv4": {
-      "title": "價格優勢",
-      "desc": "每校每年4-5萬港幣 – 僅為國際LMS系統的40-50%，功能更強大"
-    },
-    "adv5": {
-      "title": "學術背書",
-      "desc": "與香港大學、香港城市大學聯合研究，成果發表於國際教育科技期刊"
-    },
-    "adv6": {
-      "title": "數據安全",
-      "desc": "完全符合香港PDPO法規，數據存儲在港，確保學生隱私保護"
-    }
-  },
-  "market": {
-    "title": "市場機遇",
-    "subtitle": "AI教育變革的最佳時機",
-    "stat1": "1,200+ 所學校",
-    "stat1desc": "香港K12學校總數",
-    "stat2": "20億港幣",
-    "stat2desc": "政府AI教育專項資金",
-    "stat3": "100萬港幣",
-    "stat3desc": "每校平均數字化轉型補貼",
-    "stat4": "80萬",
-    "stat4desc": "香港K12在校學生數"
-  },
-  "team": {
-    "title": "世界級團隊與合作夥伴",
-    "subtitle": "頂尖學府背景 × 豐富實戰經驗 × 戰略合作網絡",
-    "academic": {
-      "title": "學術優勢",
-      "icon": "🎓",
-      "highlights": [
-        "清華大學 - 頂級AI研究機構",
-        "UC Berkeley - 領先的計算機與數據科學項目",
-        "香港城市大學 - 人機交互與教育AI",
-        "UCLA可信AI實驗室 - 前沿AI研究"
-      ]
-    },
-    "experience": {
-      "title": "實戰經驗",
-      "icon": "🚀",
-      "highlights": [
-        "從零到一打造多個AI產品",
-        "教育平台已服務100+所學校",
-        "精通AI智能體與智能系統開發",
-        "全棧開發能力，快速迭代交付"
-      ]
-    },
-    "collaboration": {
-      "title": "戰略合作",
-      "icon": "🤝",
-      "highlights": [
-        "清華智譜AI - GLM-4大模型合作夥伴",
-        "百度AI資深人士 - 企業級AI經驗",
-        "香港高校教授 - 學術驗證支持",
-        "知名學校校長 - 實戰場景洞察"
-      ]
-    },
-    "partnership": {
-      "title": "渠道合作夥伴",
-      "icon": "🏢",
-      "highlights": [
-        "North AI Limited - 戰略渠道合作夥伴",
-        "聯合產品開發與市場拓展",
-        "香港全面的分銷網絡覆蓋",
-        "專業支持與服務基礎設施"
-      ]
-    }
-  },
-  "pricing": {
-    "title": "定價方案",
-    "subtitle": "靈活的學校方案選擇",
-    "standard": {
-      "name": "標準版",
-      "price": "40,000港幣/年",
-      "desc": "400人以下學校",
-      "features": ["四大核心模塊", "每月培訓", "客戶支持", "年度報告"]
-    },
-    "professional": {
-      "name": "專業版",
-      "price": "50,000港幣/年",
-      "desc": "400-600人標準學校",
-      "features": ["包含標準版所有功能", "專屬客戶經理", "優先支持", "自定義整合"]
-    },
-    "enterprise": {
-      "name": "企業版",
-      "price": "60,000港幣/年",
-      "desc": "600人以上大型學校",
-      "features": ["包含專業版所有功能", "優先功能訪問", "高級分析", "白手套服務"]
-    }
+  "partners": {
+    "title": "合作夥伴與研發背景"
   },
   "cta": {
-    "title": "準備好轉型您的學校了嗎？",
-    "subtitle": "擁抱AI驅動的智能教育，引領數字化時代變革",
-    "button": "預約演示",
-    "contact": "或聯繫我們：info@insightaihk.com"
+    "title": "立即聯繫我們",
+    "subtitle": "了解學校導入方案、安排試用或索取報價。",
+    "button": "聯繫我們",
+    "email": "電郵：contact@insightaihk.com"
   },
   "footer": {
     "company": "Insight AI Limited",
-    "location": "香港",
-    "rights": "© 2024 Insight AI Limited. 版權所有。",
-    "partnership": "由 North AI Limited 提供支持",
-    "privacy": "隱私政策",
-    "terms": "服務條款"
+    "rights": "© 2025 Insight AI Limited. 版權所有。",
+    "made_in": "Made with ❤️ in Hong Kong."
   }
 }
-
