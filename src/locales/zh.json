@@ -1,94 +1,126 @@
 {
   "nav": {
-    "product": "產品",
-    "advantages": "功能",
-    "team": "團隊",
-    "contact": "聯繫"
+    "mission": "使命",
+    "platform": "平台",
+    "partners": "合作夥伴",
+    "contact": "聯繫",
+    "openMenu": "開啟選單",
+    "switchLang": "Switch to English"
   },
   "hero": {
     "title": "Insight AI",
-    "subtitle": "香港首個 All-in-One AI 教育平台",
-    "tagline": "一半的價格，三倍的價值",
-    "description": "專為香港 DSE 課綱、本地教與學流程而設計的 AI 教育基礎設施。",
-    "badge": "香港首個 AI 教育平台",
-    "partnershipBadge": "由 North AI Limited 提供支持",
+    "subtitle": "香港 K-12 教育的 AI 教學基礎設施",
+    "mission": "隨著人工智能迅速進入教育現場，香港學界正面臨一項關鍵挑戰：如何在安全、可控、具教育價值的前提下，讓 AI 真正為教師與學生帶來實質支援。",
+    "missionHighlight": "Insight AI 的使命，是協助學校在 AI 時代建立一套可靠的教學基建，使 AI 不僅是工具，而是推動教與學深度提升的伙伴。",
+    "badge": "香港 K-12 AI 教育平台",
+    "partnershipBadge": "清華智譜 AI 戰略合作",
     "cta": "預約演示",
-    "ctaSecondary": "了解更多"
+    "ctaSecondary": "了解更多",
+    "trustedBy": "合作夥伴信賴",
+    "efficiency": "效率提升",
+    "partnerZhipu": "智譜 AI",
+    "partnerBerkeley": "UC Berkeley",
+    "partnerCityu": "香港城大"
   },
-  "roles": {
-    "title": "一個平台",
-    "subtitle": "協助教師、學生與管理層形成高效閉環",
+  "mission": {
+    "title": "我們的教育願景",
+    "subtitle": "與香港學校共同探索更專業、更務實的 AI 教學模式",
+    "direction1": {
+      "title": "AI 素養教育",
+      "subtitle": "AI Literacy",
+      "desc": "協助學生理解、善用並能審視 AI，建立未來必需的判斷力與自主學習能力。",
+      "points": ["培養 AI 時代的批判思維", "建立負責任的 AI 使用觀念", "發展自主學習能力"]
+    },
+    "direction2": {
+      "title": "優化教師工作流程",
+      "subtitle": "Teacher Empowerment",
+      "desc": "以大模型技術支援作業管理、即時回饋與課堂教學，減少重複行政與批改壓力。",
+      "points": ["AI 輔助批改與即時回饋", "智能作業管理系統", "讓時間回到教學本身"]
+    },
+    "direction3": {
+      "title": "數據驅動的教學洞察",
+      "subtitle": "Data-Driven Insights",
+      "desc": "讓教師及早掌握學生學習弱項，並提供具有針對性的支援與介入。",
+      "points": ["即時學習分析報告", "弱項預警與介入建議", "因材施教的數據基礎"]
+    }
+  },
+  "platform": {
+    "title": "一個平台，服務全校",
+    "subtitle": "教師、學生與管理層共享同一套智慧教學生態系統",
     "teacher": {
       "title": "教師端",
-      "desc": "打造更快、更一致、更智能的教學流程。AI 批改助手、自動生成報告、完整教學工具庫。"
+      "desc": "更快備課、出題、批改與管理教學資源",
+      "features": ["AI 批改助手 — 評分一致、客觀、快速", "自動生成班級學習報告", "整合高頻教學工具與全校資源庫"]
     },
     "student": {
       "title": "學生端",
-      "desc": "看得見自己的進步，越學越有效率。AI 智慧講解、線上測驗即時回饋、個人薄弱點分析。"
+      "desc": "即時回饋、自主學習、個人化學習路徑",
+      "features": ["AI 智慧講解 — 真正理解你的錯題", "成績趨勢追蹤與弱點分析", "個人化練習與進度提醒"]
     },
     "admin": {
       "title": "管理端",
-      "desc": "即時掌握學校整體運作與學習走勢。全校數據一目了然，支援教學決策。"
+      "desc": "運作與學習全流程的統一數據視圖",
+      "features": ["全校教學質量儀表板", "學生成長檔案與預警系統", "數據驅動的決策支援"]
     }
   },
-  "features": {
-    "teacher": {
-      "label": "教師專用",
-      "title": "AI 批改助手",
-      "desc": "批改一致又快速。自訂 Rubric、語氣、學科規範。AI 先批一次，教師只需快速確認，節省超過 120% 時間。",
-      "list": [
-        "一個平台整合所有作業",
-        "自訂 Rubric 與語氣",
-        "科組間可沿用標準"
-      ]
+  "value": {
+    "title": "核心價值",
+    "subtitle": "專為香港本土教育設計",
+    "item1": {
+      "title": "高效閉環",
+      "desc": "相同題組、規準與資源可跨班使用，降低重複備課與溝通成本"
     },
-    "data": {
-      "label": "數據洞察",
-      "title": "自動生成班級學習報告",
-      "desc": "想知道哪些題型最常出錯？哪位學生需要支援？Insight AI 自動分析並提供教學建議。",
-      "list": [
-        "題型錯誤分析",
-        "知識點薄弱識別",
-        "下一步教學建議"
-      ]
+    "item2": {
+      "title": "數據驅動",
+      "desc": "每天的教與學行為都轉為可查詢的資訊：任務狀態、弱點知識點、成績走勢"
     },
-    "student": {
-      "label": "學生專屬",
-      "title": "Magic Toolkits",
-      "desc": "學習輔助工具、減壓與 Well-being 支援。讓學生真正「看到自己變好」。",
-      "list": [
-        "AI 學習導師",
-        "錯題分析",
-        "成就系統"
-      ]
-    },
-    "smart_learning": {
-      "label": "智慧學習",
-      "title": "AI 智慧講解",
-      "desc": "比「標準答案」更懂你。依照學生的解題步驟自動調整講解難度，用最能理解的方式解釋。",
-      "list": [
-        "個性化解說",
-        "即時錯誤回饋",
-        "成績趨勢追蹤"
-      ]
+    "item3": {
+      "title": "本土優化",
+      "desc": "完整採集香港老師與學生痛點，針對 K-12 與 DSE 課程體系深度優化"
     }
-  },
-  "demo": {
-    "title": "產品演示",
-    "subtitle": "親身體驗 Insight AI 的強大功能"
   },
   "partners": {
-    "title": "合作夥伴與研發背景"
+    "title": "技術與研究合作夥伴",
+    "subtitle": "頂尖學府與產業合作，為香港教育提供最強 AI 支援",
+    "strategicPartner": "戰略合作夥伴",
+    "strategicPartnerDesc": "提供強大的 AI 能力支援",
+    "researchTeam": "研究團隊來自",
+    "researchTeamDesc": "由世界級機構的頂尖研究人員驅動",
+    "tsinghua": "清華大學",
+    "ucBerkeley": "UC Berkeley",
+    "cityuHk": "香港城市大學",
+    "zhipu": {
+      "name": "清華智譜 AI",
+      "desc": "GLM-4 教育模型聯合研發，團隊來自清華、UC Berkeley、百度文心等頂尖機構"
+    },
+    "berkeley": {
+      "name": "UC Berkeley",
+      "desc": "計算機與數據科學領域研究合作"
+    },
+    "cityu": {
+      "name": "香港本地研究團隊",
+      "desc": "城市大學博士團隊主導香港教育 AI、人機互動研究"
+    },
+    "model": {
+      "title": "教育專用 AI 模型",
+      "desc": "採用「教育場景優化模型」，基於課綱、校本評分規準、教案結構與既有題庫持續迭代，非通用模型直接套用"
+    }
   },
   "cta": {
-    "title": "立即聯繫我們",
-    "subtitle": "了解學校導入方案、安排試用或索取報價。",
-    "button": "聯繫我們",
-    "email": "電郵：contact@insightaihk.com"
+    "title": "與我們共建 AI 教育新生態",
+    "subtitle": "如需瞭解產品方案、校本導入與報價，或安排功能演示與技術對接",
+    "button": "預約演示",
+    "contact": "聯繫我們：contact@insightaihk.com"
   },
   "footer": {
     "company": "Insight AI Limited",
-    "rights": "© 2025 Insight AI Limited. 版權所有。",
-    "made_in": "Made with ❤️ in Hong Kong."
+    "location": "香港",
+    "rights": "© 2024 Insight AI Limited. 版權所有。",
+    "privacy": "隱私政策",
+    "terms": "服務條款",
+    "quickLinks": "快速連結",
+    "legal": "法律條款",
+    "contactTitle": "聯絡我們",
+    "madeWith": "用 ❤️ 在香港製作"
   }
 }
