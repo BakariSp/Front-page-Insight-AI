@@ -12,51 +12,36 @@ export default function LoginBackground() {
         }}
       />
 
-      {/* Gradient Mesh Blobs */}
+      {/* Gradient Mesh Blobs - Static (no animation for performance) */}
       <div className="absolute inset-0 z-0">
         {/* Top Left - White/Light Blue */}
         <div 
-          className="absolute top-[-10%] left-[-10%] w-[70%] h-[70%] rounded-full mix-blend-multiply filter blur-[80px] opacity-70 animate-blob"
-          style={{
-            background: '#e0f2fe', // Very light blue
-            animationDelay: '0s',
-          }}
+          className="absolute top-[-10%] left-[-10%] w-[70%] h-[70%] rounded-full mix-blend-multiply filter blur-[80px] opacity-70"
+          style={{ background: '#e0f2fe' }}
         />
         
         {/* Top Right - Cyan/Sky Blue */}
         <div 
-          className="absolute top-[-10%] right-[-10%] w-[70%] h-[70%] rounded-full mix-blend-multiply filter blur-[80px] opacity-60 animate-blob"
-          style={{
-            background: '#bae6fd', // Sky blue
-            animationDelay: '2s',
-          }}
+          className="absolute top-[-10%] right-[-10%] w-[70%] h-[70%] rounded-full mix-blend-multiply filter blur-[80px] opacity-60"
+          style={{ background: '#bae6fd' }}
         />
         
-        {/* Bottom Left - Soft Purple/Blue (Accent from reference image 1) */}
+        {/* Bottom Left - Soft Purple/Blue */}
         <div 
-          className="absolute bottom-[-20%] left-[-10%] w-[70%] h-[70%] rounded-full mix-blend-multiply filter blur-[80px] opacity-50 animate-blob"
-          style={{
-            background: '#e9d5ff', // Soft purple/violet hint
-            animationDelay: '4s',
-          }}
+          className="absolute bottom-[-20%] left-[-10%] w-[70%] h-[70%] rounded-full mix-blend-multiply filter blur-[80px] opacity-50"
+          style={{ background: '#e9d5ff' }}
         />
 
-         {/* Bottom Right - Brighter Blue */}
-         <div 
-          className="absolute bottom-[-20%] right-[-20%] w-[70%] h-[70%] rounded-full mix-blend-multiply filter blur-[80px] opacity-60 animate-blob"
-          style={{
-            background: '#7dd3fc', // Brighter sky blue
-            animationDelay: '6s',
-          }}
+        {/* Bottom Right - Brighter Blue */}
+        <div 
+          className="absolute bottom-[-20%] right-[-20%] w-[70%] h-[70%] rounded-full mix-blend-multiply filter blur-[80px] opacity-60"
+          style={{ background: '#7dd3fc' }}
         />
         
-        {/* Center/Floating - White Highlight */}
+        {/* Center - White Highlight */}
         <div 
-          className="absolute top-[30%] left-[30%] w-[40%] h-[40%] rounded-full mix-blend-overlay filter blur-[60px] opacity-90 animate-blob"
-          style={{
-            background: '#ffffff',
-            animationDelay: '3s',
-          }}
+          className="absolute top-[30%] left-[30%] w-[40%] h-[40%] rounded-full mix-blend-overlay filter blur-[60px] opacity-90"
+          style={{ background: '#ffffff' }}
         />
       </div>
     </div>

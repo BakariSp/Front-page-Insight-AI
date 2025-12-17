@@ -25,17 +25,61 @@ const LocallyOptimizedIcon = () => (
   </svg>
 );
 
+// SVG Icons for Platform roles (replacing emoji for better visual)
+const TeacherIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
+  </svg>
+);
+
+const StudentIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+  </svg>
+);
+
+const AdminIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />
+  </svg>
+);
+
+const getRoleIcon = (role: string) => {
+  switch (role) {
+    case 'teacher': return <TeacherIcon />;
+    case 'student': return <StudentIcon />;
+    case 'admin': return <AdminIcon />;
+    default: return null;
+  }
+};
+
+const getRoleColor = (role: string) => {
+  switch (role) {
+    case 'teacher': return 'text-blue-600 bg-blue-50 group-hover:bg-blue-100';
+    case 'student': return 'text-emerald-600 bg-emerald-50 group-hover:bg-emerald-100';
+    case 'admin': return 'text-violet-600 bg-violet-50 group-hover:bg-violet-100';
+    default: return 'text-slate-600 bg-slate-50';
+  }
+};
+
 function App() {
   const { t, i18n } = useTranslation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Handle scroll effect for navbar
+  // Handle scroll effect for navbar with throttle for performance
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 20);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -78,14 +122,7 @@ function App() {
     }
   };
 
-  const floatingAnimation: any = {
-    y: [0, -15, 0],
-    transition: {
-      duration: 6,
-      repeat: Infinity,
-      ease: "easeInOut"
-    }
-  };
+  // Removed JS floating animation - now using CSS animation for better performance
 
   return (
     <div className="relative min-h-screen font-sans text-slate-800 selection:bg-blue-100">
@@ -249,11 +286,10 @@ function App() {
               </motion.a>
             </motion.div>
 
-            {/* Product Image with Floating Animation */}
+            {/* Product Image with CSS Floating Animation for GPU acceleration */}
             <motion.div
               variants={fadeInUp}
-              animate={floatingAnimation}
-              className="relative mx-auto w-full max-w-4xl rounded-2xl shadow-2xl border border-slate-200/50 overflow-hidden bg-white"
+              className="relative mx-auto w-full max-w-4xl rounded-2xl shadow-2xl border border-slate-200/50 overflow-hidden bg-white animate-float will-change-transform"
             >
               <div className="absolute top-0 left-0 right-0 h-8 bg-slate-100 border-b border-slate-200 flex items-center gap-2 px-4">
                  <div className="w-3 h-3 rounded-full bg-red-400"></div>
@@ -269,23 +305,6 @@ function App() {
               <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-white/20 to-transparent"></div>
             </motion.div>
 
-            <motion.div
-               variants={fadeInUp}
-               className="mt-16 pt-8 border-t border-slate-200/60"
-            >
-              <p className="text-sm text-slate-500 font-medium mb-6 uppercase tracking-wider">{t('hero.trustedBy')}</p>
-              <div className="flex flex-wrap justify-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-                 <span className="font-bold text-xl text-slate-800 flex items-center gap-2">
-                   <span className="text-2xl">🤖</span> {t('hero.partnerZhipu')}
-                 </span>
-                 <span className="font-bold text-xl text-slate-800 flex items-center gap-2">
-                   <span className="text-2xl">🏛️</span> {t('hero.partnerBerkeley')}
-                 </span>
-                 <span className="font-bold text-xl text-slate-800 flex items-center gap-2">
-                   <span className="text-2xl">🔬</span> {t('hero.partnerCityu')}
-                 </span>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -320,11 +339,9 @@ function App() {
                 className="relative rounded-3xl shadow-2xl border border-white/50 bg-white/50 backdrop-blur-sm z-10"
                 onError={(e) => {e.currentTarget.style.display='none'}}
               />
-              {/* Floating Badge */}
-              <motion.div 
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -bottom-6 -right-6 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 z-20 hidden md:block"
+              {/* Floating Badge - CSS animation for performance */}
+              <div 
+                className="absolute -bottom-6 -right-6 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 z-20 hidden md:block animate-float will-change-transform"
               >
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-green-600">
@@ -335,7 +352,7 @@ function App() {
                     <p className="text-lg font-bold text-slate-900">+40%</p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </motion.div>
 
             {/* Right Column: Features List */}
@@ -343,12 +360,11 @@ function App() {
               {['direction1', 'direction2', 'direction3'].map((direction, index) => (
                 <motion.div
                   key={direction}
-                  initial={{ opacity: 0, x: 50 }}
+                  initial={{ opacity: 0, x: 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.2 }}
-                  whileHover={{ scale: 1.02 }}
-                  className="bg-white/60 backdrop-blur-md border border-white/50 rounded-2xl p-6 shadow-lg hover:shadow-xl hover:bg-white/80 transition-all duration-300 flex gap-6"
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ delay: index * 0.15, duration: 0.5 }}
+                  className="bg-white/60 backdrop-blur-sm border border-white/50 rounded-2xl p-6 shadow-lg hover:shadow-xl hover:bg-white/80 transition-shadow duration-300 flex gap-6"
                 >
                   <div className="flex-shrink-0">
                     <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600 font-bold text-xl">
@@ -389,18 +405,17 @@ function App() {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
             {['teacher', 'student', 'admin'].map((role, index) => (
-              <motion.div
-                key={role}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.1 }}
-                transition={{ delay: index * 0.2 }}
-                whileHover={{ scale: 1.05 }}
-                className="p-8 rounded-3xl border transition-all duration-300 h-full bg-white/60 backdrop-blur-md border-white/60 shadow-lg group hover:bg-white/90 hover:border-blue-200 hover:shadow-2xl hover:shadow-blue-900/10 hover:ring-1 hover:ring-blue-100"
+                <motion.div
+                  key={role}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2, margin: "-50px" }}
+                  transition={{ delay: index * 0.15, duration: 0.5 }}
+                  className="p-8 rounded-3xl border h-full bg-white/60 backdrop-blur-sm border-white/60 shadow-lg group hover:bg-white/95 hover:border-blue-200 hover:shadow-2xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-200 ease-out"
               >
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-2xl flex items-center justify-center text-2xl bg-slate-100 group-hover:bg-blue-100 transition-colors duration-300">
-                    {role === 'teacher' ? '👨‍🏫' : role === 'student' ? '🎓' : '📊'}
+                  <div className={`w-12 h-12 rounded-2xl flex items-center justify-center transition-colors duration-200 ${getRoleColor(role)}`}>
+                    {getRoleIcon(role)}
                   </div>
                   <h3 className="text-2xl font-bold text-slate-900">{t(`platform.${role}.title`)}</h3>
                 </div>
@@ -412,7 +427,7 @@ function App() {
                 <ul className="space-y-4">
                   {(t(`platform.${role}.features`, { returnObjects: true }) as string[]).map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-3 text-sm text-slate-700">
-                      <span className="text-lg leading-none text-slate-400 group-hover:text-blue-500 transition-colors duration-300">•</span>
+                      <span className="text-lg leading-none text-slate-400 group-hover:text-blue-500 transition-colors duration-200">•</span>
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -442,12 +457,11 @@ function App() {
                 key={item}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.2 }}
-                whileHover={{ scale: 1.05 }}
-                className="flex flex-col items-center text-center"
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ delay: index * 0.15, duration: 0.5 }}
+                className="flex flex-col items-center text-center group"
               >
-                <div className="w-20 h-20 bg-white rounded-[2rem] shadow-xl shadow-slate-200/50 flex items-center justify-center mb-6 transition-transform duration-300 hover:rotate-12">
+                <div className="w-20 h-20 bg-white rounded-[2rem] shadow-xl shadow-slate-200/50 flex items-center justify-center mb-6 transition-transform duration-300 group-hover:rotate-6 group-hover:scale-105">
                    {index === 0 && <EfficientClosedLoopIcon />}
                    {index === 1 && <DataDrivenIcon />}
                    {index === 2 && <LocallyOptimizedIcon />}
@@ -506,12 +520,11 @@ function App() {
                <motion.div 
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="bg-white/60 backdrop-blur-sm border border-slate-100 rounded-3xl p-8 hover:shadow-xl hover:bg-white transition-all duration-300 group flex flex-col items-center text-center"
-                whileHover={{ y: -5 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ delay: 0.1, duration: 0.5 }}
+                className="bg-white/60 backdrop-blur-sm border border-slate-100 rounded-3xl p-8 hover:shadow-xl hover:bg-white hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center"
               >
-                <div className="h-20 flex items-center justify-center mb-6 p-2 group-hover:scale-105 transition-transform">
+                <div className="h-20 flex items-center justify-center mb-6 p-2 group-hover:scale-105 transition-transform duration-300">
                    <img src="/tsinghua_logo.png" alt="Tsinghua University" className="h-full w-auto object-contain" />
                 </div>
                 <h3 className="text-lg font-bold text-slate-900 mb-2">{t('partners.tsinghua')}</h3>
@@ -520,12 +533,11 @@ function App() {
                <motion.div 
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-                className="bg-white/60 backdrop-blur-sm border border-slate-100 rounded-3xl p-8 hover:shadow-xl hover:bg-white transition-all duration-300 group flex flex-col items-center text-center"
-                whileHover={{ y: -5 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+                className="bg-white/60 backdrop-blur-sm border border-slate-100 rounded-3xl p-8 hover:shadow-xl hover:bg-white hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center"
               >
-                <div className="h-20 flex items-center justify-center mb-6 p-2 group-hover:scale-105 transition-transform">
+                <div className="h-20 flex items-center justify-center mb-6 p-2 group-hover:scale-105 transition-transform duration-300">
                    <img src="/UCB_logo.png" alt="UC Berkeley" className="h-full w-auto object-contain" />
                 </div>
                 <h3 className="text-lg font-bold text-slate-900 mb-2">{t('partners.ucBerkeley')}</h3>
@@ -534,12 +546,11 @@ function App() {
                <motion.div 
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 }}
-                className="bg-white/60 backdrop-blur-sm border border-slate-100 rounded-3xl p-8 hover:shadow-xl hover:bg-white transition-all duration-300 group flex flex-col items-center text-center"
-                whileHover={{ y: -5 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ delay: 0.3, duration: 0.5 }}
+                className="bg-white/60 backdrop-blur-sm border border-slate-100 rounded-3xl p-8 hover:shadow-xl hover:bg-white hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center"
               >
-                <div className="h-20 flex items-center justify-center mb-6 p-2 group-hover:scale-105 transition-transform">
+                <div className="h-20 flex items-center justify-center mb-6 p-2 group-hover:scale-105 transition-transform duration-300">
                    <img src="/cityU_logo.png" alt="CityU HK" className="h-full w-auto object-contain" />
                 </div>
                 <h3 className="text-lg font-bold text-slate-900 mb-2">{t('partners.cityuHk')}</h3>

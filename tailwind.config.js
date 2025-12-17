@@ -6,21 +6,26 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        blob: "blob 10s infinite",
+        // Slower blob animation for better performance
+        blob: "blob 20s infinite",
+        // Floating animation for hero image
+        float: "float 6s ease-in-out infinite",
       },
       keyframes: {
         blob: {
-          "0%": {
-            transform: "translate(0px, 0px) scale(1)",
+          "0%, 100%": {
+            transform: "translate3d(0, 0, 0) scale(1)",
           },
-          "33%": {
-            transform: "translate(30px, -50px) scale(1.1)",
+          "50%": {
+            transform: "translate3d(15px, -25px, 0) scale(1.05)",
           },
-          "66%": {
-            transform: "translate(-20px, 20px) scale(0.9)",
+        },
+        float: {
+          "0%, 100%": {
+            transform: "translate3d(0, 0, 0)",
           },
-          "100%": {
-            transform: "translate(0px, 0px) scale(1)",
+          "50%": {
+            transform: "translate3d(0, -12px, 0)",
           },
         },
       },
