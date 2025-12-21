@@ -1,6 +1,6 @@
 {
   "nav": {
-    "mission": "Mission",
+    "mission": "Vision",
     "platform": "Platform",
     "pricing": "Pricing",
     "partners": "Partners",
@@ -10,193 +10,193 @@
   },
   "hero": {
     "title": "Insight AI",
-    "subtitle": "AI Teaching Infrastructure for Hong Kong K-12 Education",
-    "mission": "As AI rapidly enters the education landscape, Hong Kong schools face a critical challenge: how to enable AI to provide real support for teachers and students in a safe, controllable, and educationally valuable way.",
-    "missionHighlight": "Insight AI's mission is to help schools build reliable teaching infrastructure for the AI era, making AI not just a tool, but a partner in deepening teaching and learning.",
-    "badge": "Hong Kong K-12 AI Education Platform",
-    "partnershipBadge": "Tsinghua Zhipu AI Strategic Partner",
-    "cta": "Request Demo",
+    "subtitle": "AI Infrastructure for K-12 Education",
+    "mission": "Making AI a trusted partner in every classroom — safe, effective, and designed for real teaching needs.",
+    "missionHighlight": "We help schools build reliable AI teaching infrastructure for the future.",
+    "badge": "HK K-12 AI Education Platform",
+    "partnershipBadge": "Zhipu AI Partner",
+    "cta": "Book Demo",
     "ctaSecondary": "Learn More",
-    "trustedBy": "Trusted By Partners",
+    "trustedBy": "Trusted By",
     "efficiency": "Efficiency",
     "partnerZhipu": "Zhipu AI",
     "partnerBerkeley": "UC Berkeley",
     "partnerCityu": "CityU HK"
   },
   "mission": {
-    "title": "Our Educational Vision",
-    "subtitle": "Exploring professional and practical AI teaching models with Hong Kong schools",
+    "title": "Our Vision",
+    "subtitle": "Building practical AI solutions with Hong Kong schools",
     "direction1": {
-      "title": "AI Literacy Education",
-      "subtitle": "AI Literacy",
-      "desc": "Help students understand, utilize, and critically evaluate AI, building the judgment and autonomous learning capabilities essential for the future.",
-      "points": ["Cultivate critical thinking for the AI era", "Establish responsible AI usage mindset", "Develop autonomous learning abilities"]
+      "title": "AI Literacy",
+      "subtitle": "FUTURE-READY",
+      "desc": "Equip students to understand, use, and critically evaluate AI technologies.",
+      "points": ["Critical thinking", "Responsible AI use", "Self-directed learning"]
     },
     "direction2": {
-      "title": "Optimize Teacher Workflow",
-      "subtitle": "Teacher Empowerment",
-      "desc": "Support assignment management, instant feedback, and classroom teaching with large language models, reducing repetitive administrative and grading burdens.",
-      "points": ["AI-assisted grading with instant feedback", "Intelligent assignment management system", "Return time to teaching itself"]
+      "title": "Teacher Empowerment",
+      "subtitle": "EFFICIENCY",
+      "desc": "Reduce admin burden with AI-powered grading, feedback, and management.",
+      "points": ["Instant AI grading", "Smart management", "Focus on teaching"]
     },
     "direction3": {
-      "title": "Data-Driven Teaching Insights",
-      "subtitle": "Data-Driven Insights",
-      "desc": "Enable teachers to identify student learning gaps early and provide targeted support and intervention.",
-      "points": ["Real-time learning analytics reports", "Weakness alerts and intervention suggestions", "Data foundation for differentiated instruction"]
+      "title": "Data Insights",
+      "subtitle": "ACTIONABLE",
+      "desc": "Identify learning gaps early with real-time analytics and intervention tools.",
+      "points": ["Live analytics", "Early alerts", "Personalized support"]
     }
   },
   "platform": {
-    "title": "One Platform, Serving the Whole School",
-    "subtitle": "Teachers, students, and administrators share one intelligent teaching ecosystem",
+    "title": "One Platform, Whole School",
+    "subtitle": "A unified ecosystem for teachers, students, and administrators",
     "teacher": {
-      "title": "For Teachers",
-      "desc": "Faster lesson planning, question creation, grading, and resource management",
-      "features": ["AI Grading Assistant — consistent, objective, fast", "Auto-generated class learning reports", "Integrated teaching tools & school-wide resource library"]
+      "title": "Teachers",
+      "desc": "Plan, create, grade — faster",
+      "features": ["AI Grading — fast & consistent", "Auto class reports", "School-wide resource library"]
     },
     "student": {
-      "title": "For Students",
-      "desc": "Instant feedback, self-directed learning, personalized learning paths",
-      "features": ["AI Smart Explanations — truly understand your mistakes", "Performance trend tracking & weakness analysis", "Personalized practice & progress reminders"]
+      "title": "Students",
+      "desc": "Learn smarter, not harder",
+      "features": ["AI explanations for mistakes", "Progress & weakness tracking", "Personalized practice"]
     },
     "admin": {
-      "title": "For Administrators",
-      "desc": "Unified data view of operations and learning processes",
-      "features": ["School-wide teaching quality dashboard", "Student growth portfolios & early warning systems", "Data-driven decision support"]
+      "title": "Admins",
+      "desc": "Full visibility, data-driven",
+      "features": ["Quality dashboard", "Growth portfolios & alerts", "Decision support"]
     }
   },
   "value": {
-    "title": "Core Values",
-    "subtitle": "Designed specifically for Hong Kong local education",
+    "title": "Why Insight AI",
+    "subtitle": "Built for Hong Kong education",
     "item1": {
-      "title": "Efficient Closed Loop",
-      "desc": "Same question sets, rubrics, and resources can be used across classes, reducing redundant preparation and communication costs"
+      "title": "Efficient Workflow",
+      "desc": "Reusable rubrics and resources across classes"
     },
     "item2": {
       "title": "Data-Driven",
-      "desc": "Daily teaching and learning activities become queryable information: task status, knowledge gaps, performance trends"
+      "desc": "Track tasks, gaps, and trends in real-time"
     },
     "item3": {
       "title": "Locally Optimized",
-      "desc": "Built on insights from Hong Kong teachers and students, deeply optimized for K-12 and DSE curriculum systems"
+      "desc": "Designed for K-12 and DSE curriculum"
     }
   },
   "partners": {
-    "title": "Technology & Research Partners",
-    "subtitle": "Top academic institutions and industry collaboration for the strongest AI support in Hong Kong education",
+    "title": "Partners",
+    "subtitle": "World-class AI and academic collaboration",
     "strategicPartner": "Strategic Partner",
-    "strategicPartnerDesc": "Powering our AI capabilities",
-    "researchTeam": "Research Team From",
-    "researchTeamDesc": "Driven by top researchers from world-class institutions",
+    "strategicPartnerDesc": "Powering our AI",
+    "researchTeam": "Research Team",
+    "researchTeamDesc": "Top researchers from leading institutions",
     "tsinghua": "Tsinghua University",
     "ucBerkeley": "UC Berkeley",
     "cityuHk": "CityU HK",
     "zhipu": {
-      "name": "Tsinghua Zhipu AI",
-      "desc": "Joint development of GLM-4 education models, with team from Tsinghua, UC Berkeley, Baidu Wenxin and other top institutions"
+      "name": "Zhipu AI",
+      "desc": "GLM-4 education models, co-developed with Tsinghua"
     },
     "berkeley": {
       "name": "UC Berkeley",
-      "desc": "Research collaboration in computer science and data science"
+      "desc": "CS & Data Science research"
     },
     "cityu": {
-      "name": "Hong Kong Local Research Team",
-      "desc": "CityU doctoral team leading Hong Kong education AI and human-computer interaction research"
+      "name": "CityU HK",
+      "desc": "Local education AI research"
     },
     "model": {
-      "title": "Education-Specific AI Model",
-      "desc": "Using 'education scenario optimized models', continuously iterated based on curriculum, school-based rubrics, lesson plan structures, and existing question banks — not generic models directly applied"
+      "title": "Education-Optimized AI",
+      "desc": "Fine-tuned for curriculum, rubrics, and real teaching scenarios"
     }
   },
   "pricing": {
-    "title": "Pricing Plans",
-    "subtitle": "Choose the right plan for your school's AI transformation journey",
-    "viewAll": "View Full Feature Comparison",
+    "title": "Pricing",
+    "subtitle": "Choose the right plan for your school",
+    "viewAll": "Compare All Features",
     "plans": {
       "essential": {
         "name": "Essential",
-        "subtitle": "Digital Teaching Foundation",
+        "subtitle": "Digital Foundation",
         "price": "HK$38,999",
-        "period": "/ year / per school",
-        "description": "Establish a robust digital assignment management system for your school with cloud-based and structured teaching resources.",
-        "button": "Learn About Essential"
+        "period": "/year",
+        "description": "Cloud-based assignment management with structured teaching resources.",
+        "button": "Get Started"
       },
       "professional": {
         "name": "Professional",
-        "subtitle": "AI-Native Teaching Empowerment",
+        "subtitle": "AI-Native",
         "price": "HK$78,999",
-        "period": "starting / year / per school",
-        "description": "The go-to choice for school-wide AI transformation. Deep integration with Zhipu AI education models for full-process automation.",
-        "button": "Start AI Transformation"
+        "period": "/year+",
+        "description": "Full AI transformation with Zhipu models, auto-grading, and guided learning.",
+        "button": "Start AI Journey"
       },
       "enterprise": {
         "name": "Enterprise",
-        "subtitle": "Private Campus AI Center",
+        "subtitle": "Private AI Center",
         "price": "HK$218,999",
-        "period": "starting (includes first year hardware)",
-        "annualized": "~HK$73,000/year (amortized over 3 years)",
-        "description": "Built for pioneering schools. Establish an in-campus dedicated AI computing center ensuring ultimate privacy and performance.",
-        "button": "Schedule Expert Consultation"
+        "period": "one-time",
+        "annualized": "≈ HK$73K/year over 3 years",
+        "description": "On-campus AI computing center with ultimate privacy and performance.",
+        "button": "Talk to Expert"
       }
     },
     "comparison": {
-      "title": "Full Feature Comparison",
-      "subtitle": "Clear feature progression paths to help you choose the right AI partner for your school's development stage.",
-      "featureDetails": "Feature Details",
+      "title": "Feature Comparison",
+      "subtitle": "See what's included in each plan",
+      "featureDetails": "Features",
       "categories": {
-        "teaching": "Teaching Management Foundation",
-        "ai": "AI-Native Capabilities",
+        "teaching": "Core Management",
+        "ai": "AI Capabilities",
         "learning": "Guided Learning",
-        "architecture": "Architecture & Security"
+        "architecture": "Infrastructure"
       },
       "features": {
-        "classManagement": "Smart Class/Assignment Lifecycle Management",
-        "ocr": "High-Precision OCR Question Recognition",
-        "basicReports": "Basic Learning Analytics Reports",
-        "zhipuAi": "Zhipu AI Dedicated Education Model",
-        "quizBuilder": "AI Quiz Builder (Auto Question Generation)",
-        "aiGrading": "AI Grading Agent (Complex Grammar Scoring)",
-        "socratic": "Socratic Student Guidance Tutor",
-        "personalizedAnalysis": "Personalized Dynamic Analysis & Error Push",
-        "dataStorage": "Data Storage Mode",
-        "gpuCluster": "GPU Local Computing Hardware Cluster",
-        "offlineMode": "Intranet Offline Operation Support"
+        "classManagement": "Class & Assignment Management",
+        "ocr": "OCR Question Recognition",
+        "basicReports": "Basic Analytics",
+        "zhipuAi": "Zhipu AI Education Model",
+        "quizBuilder": "AI Quiz Builder",
+        "aiGrading": "AI Grading Agent",
+        "socratic": "Socratic Tutor",
+        "personalizedAnalysis": "Personalized Analysis",
+        "dataStorage": "Data Storage",
+        "gpuCluster": "Local GPU Cluster",
+        "offlineMode": "Offline Support"
       },
       "values": {
         "cloud": "Cloud",
-        "cloudDedicated": "Cloud/Dedicated",
-        "private": "Private Deployment"
+        "cloudDedicated": "Dedicated",
+        "private": "Private"
       }
     },
     "suitability": {
       "essential": {
-        "title": "Essential is suitable for:",
-        "description": "Schools with existing digital teaching materials that need more efficient assignment lifecycle management and basic auto-grading modules."
+        "title": "Best for:",
+        "description": "Schools needing efficient assignment management and basic automation."
       },
       "professional": {
-        "title": "Professional is suitable for:",
-        "description": "Transformation-leading schools pursuing qualitative teaching change, seeking comprehensive AI for auto question generation, advanced grading, and guided learning."
+        "title": "Best for:",
+        "description": "Schools ready for full AI transformation with advanced grading and tutoring."
       },
       "enterprise": {
-        "title": "Enterprise is suitable for:",
-        "description": "Benchmark schools with ultimate requirements for data security and computing performance, seeking to establish in-campus private AI clusters and dedicated knowledge bases."
+        "title": "Best for:",
+        "description": "Schools requiring private AI infrastructure and ultimate data control."
       }
     }
   },
   "cta": {
-    "title": "Build the AI Education Ecosystem with Us",
-    "subtitle": "For product solutions, school implementation, pricing, or to arrange demos and technical discussions",
-    "button": "Request Demo",
-    "contact": "Contact us: contact@insightaihk.com"
+    "title": "Ready to Transform?",
+    "subtitle": "Book a demo to see Insight AI in action",
+    "button": "Book Demo",
+    "contact": "contact@insightaihk.com"
   },
   "footer": {
     "company": "Insight AI Limited",
     "location": "Hong Kong",
     "rights": "© 2024 Insight AI Limited. All rights reserved.",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service",
-    "quickLinks": "Quick Links",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "quickLinks": "Links",
     "legal": "Legal",
     "contactTitle": "Contact",
-    "madeWith": "Made with ❤️ in Hong Kong"
+    "madeWith": "Made with ❤️ in HK"
   }
 }

@@ -7,19 +7,19 @@ import './App.css';
 
 // Icons for Core Values
 const EfficientClosedLoopIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-10 h-10 text-blue-600">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-blue-600">
     <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
   </svg>
 );
 
 const DataDrivenIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-10 h-10 text-indigo-600">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-indigo-600">
     <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />
   </svg>
 );
 
 const LocallyOptimizedIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-10 h-10 text-cyan-600">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-cyan-600">
     <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
   </svg>
@@ -383,34 +383,48 @@ function App() {
             </motion.div>
 
             {/* Right Column: Features List */}
-            <div className="space-y-6">
-              {['direction1', 'direction2', 'direction3'].map((direction, index) => (
-                <motion.div
-                  key={direction}
-                  initial={{ opacity: 0, x: 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ delay: index * 0.15, duration: 0.5 }}
-                  className="bg-white/60 backdrop-blur-sm border border-white/50 rounded-2xl p-6 shadow-lg hover:shadow-xl hover:bg-white/80 transition-shadow duration-300 flex gap-6"
-                >
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600 font-bold text-xl">
-                      {index + 1}
+            <div className="space-y-5">
+              {['direction1', 'direction2', 'direction3'].map((direction, index) => {
+                const labelColors = [
+                  'bg-blue-600 text-white',
+                  'bg-emerald-600 text-white', 
+                  'bg-violet-600 text-white'
+                ];
+                return (
+                  <motion.div
+                    key={direction}
+                    initial={{ opacity: 0, x: 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ delay: index * 0.15, duration: 0.5 }}
+                    className="bg-white/60 backdrop-blur-sm border border-white/50 rounded-2xl p-5 shadow-lg hover:shadow-xl hover:bg-white/80 transition-shadow duration-300"
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0">
+                        <div className="w-10 h-10 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600 font-bold text-lg">
+                          {index + 1}
+                        </div>
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 mb-1.5 flex-wrap">
+                          <h3 className="text-lg font-bold text-slate-900">{t(`mission.${direction}.title`)}</h3>
+                          <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${labelColors[index]}`}>
+                            {t(`mission.${direction}.subtitle`)}
+                          </span>
+                        </div>
+                        <p className="text-slate-600 text-sm leading-relaxed mb-2.5">{t(`mission.${direction}.desc`)}</p>
+                        <div className="flex flex-wrap gap-1.5">
+                          {(t(`mission.${direction}.points`, { returnObjects: true }) as string[]).map((point, idx) => (
+                            <span key={idx} className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-slate-100 text-slate-600">
+                              {point}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-2">{t(`mission.${direction}.title`)}</h3>
-                    <p className="text-slate-600 text-sm leading-relaxed mb-3">{t(`mission.${direction}.desc`)}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {(t(`mission.${direction}.points`, { returnObjects: true }) as string[]).map((point, idx) => (
-                        <span key={idx} className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700">
-                          {point}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -430,7 +444,7 @@ function App() {
             <p className="text-lg text-slate-600 max-w-2xl">{t('platform.subtitle')}</p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
             {['teacher', 'student', 'admin'].map((role, index) => (
                 <motion.div
                   key={role}
@@ -438,23 +452,25 @@ function App() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.2, margin: "-50px" }}
                   transition={{ delay: index * 0.15, duration: 0.5 }}
-                  className="p-8 rounded-3xl border h-full bg-white/60 backdrop-blur-sm border-white/60 shadow-lg group hover:bg-white/95 hover:border-blue-200 hover:shadow-2xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-200 ease-out"
+                  className="p-6 rounded-2xl border h-full bg-white/60 backdrop-blur-sm border-white/60 shadow-lg group hover:bg-white/95 hover:border-blue-200 hover:shadow-2xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-200 ease-out flex flex-col"
               >
-                <div className="flex items-center gap-4 mb-6">
-                  <div className={`w-12 h-12 rounded-2xl flex items-center justify-center transition-colors duration-200 ${getRoleColor(role)}`}>
+                <div className="flex items-center gap-3 mb-3">
+                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors duration-200 ${getRoleColor(role)}`}>
                     {getRoleIcon(role)}
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-900">{t(`platform.${role}.title`)}</h3>
+                  <h3 className="text-xl font-bold text-slate-900">{t(`platform.${role}.title`)}</h3>
                 </div>
                 
-                <p className="text-slate-600 mb-8 leading-relaxed min-h-[3rem]">
+                <p className="text-slate-500 text-sm font-medium mb-4">
                   {t(`platform.${role}.desc`)}
                 </p>
                 
-                <ul className="space-y-4">
+                <ul className="space-y-2.5 flex-grow">
                   {(t(`platform.${role}.features`, { returnObjects: true }) as string[]).map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-sm text-slate-700">
-                      <span className="text-lg leading-none text-slate-400 group-hover:text-blue-500 transition-colors duration-200">•</span>
+                    <li key={idx} className="flex items-start gap-2.5 text-sm text-slate-700">
+                      <svg className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -678,27 +694,27 @@ function App() {
           </motion.div>
 
           {/* Suitability Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
             {(['essential', 'professional', 'enterprise'] as const).map((planKey, index) => {
               const cardStyles: Record<string, string> = {
-                essential: 'bg-slate-100/60 border-slate-200/50',
-                professional: 'bg-blue-50 border-blue-100 shadow-lg',
-                enterprise: 'bg-indigo-50 border-indigo-100'
+                essential: 'bg-slate-50/80 border-slate-200/50',
+                professional: 'bg-blue-50/80 border-blue-100',
+                enterprise: 'bg-indigo-50/80 border-indigo-100'
               };
-              const titleStyles: Record<string, string> = {
-                essential: 'text-slate-800',
-                professional: 'text-blue-800',
-                enterprise: 'text-indigo-800'
+              const labelStyles: Record<string, string> = {
+                essential: 'bg-slate-700 text-white',
+                professional: 'bg-blue-600 text-white',
+                enterprise: 'bg-indigo-800 text-white'
               };
               const descStyles: Record<string, string> = {
                 essential: 'text-slate-600',
                 professional: 'text-blue-700',
                 enterprise: 'text-indigo-700'
               };
-              const dotStyles: Record<string, string> = {
-                essential: 'bg-slate-400',
-                professional: 'bg-blue-600 animate-pulse',
-                enterprise: 'bg-indigo-600'
+              const planNames: Record<string, string> = {
+                essential: 'Essential',
+                professional: 'Professional',
+                enterprise: 'Enterprise'
               };
               
               return (
@@ -707,13 +723,15 @@ function App() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
-                  className={`p-8 rounded-3xl border ${cardStyles[planKey]}`}
+                  transition={{ delay: index * 0.1, duration: 0.4 }}
+                  className={`p-5 rounded-2xl border ${cardStyles[planKey]}`}
                 >
-                  <h5 className={`font-bold mb-3 flex items-center ${titleStyles[planKey]}`}>
-                    <div className={`w-2 h-2 rounded-full mr-2 ${dotStyles[planKey]}`}></div>
-                    {t(`pricing.suitability.${planKey}.title`)}
-                  </h5>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className={`px-2 py-0.5 rounded text-xs font-bold ${labelStyles[planKey]}`}>
+                      {planNames[planKey]}
+                    </span>
+                    <span className="text-xs font-medium text-slate-500">{t(`pricing.suitability.${planKey}.title`)}</span>
+                  </div>
                   <p className={`text-sm leading-relaxed ${descStyles[planKey]}`}>
                     {t(`pricing.suitability.${planKey}.description`)}
                   </p>
@@ -725,35 +743,37 @@ function App() {
       </section>
 
       {/* Values Section */}
-      <section className="py-24 bg-gradient-to-b from-white/40 to-white/10 backdrop-blur-sm relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 bg-gradient-to-b from-white/40 to-white/10 backdrop-blur-sm relative z-10">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
            <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
             variants={fadeInUp}
-            className="text-center mb-16"
+            className="text-center mb-10"
           >
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">{t('value.title')}</h2>
+            <h2 className="text-2xl font-bold text-slate-900">{t('value.title')}</h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
              {['item1', 'item2', 'item3'].map((item, index) => (
               <motion.div
                 key={item}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ delay: index * 0.15, duration: 0.5 }}
-                className="flex flex-col items-center text-center group"
+                transition={{ delay: index * 0.1, duration: 0.4 }}
+                className="flex items-start gap-4 p-4 rounded-xl bg-white/50 border border-white/60 group hover:bg-white/80 transition-all"
               >
-                <div className="w-20 h-20 bg-white rounded-[2rem] shadow-xl shadow-slate-200/50 flex items-center justify-center mb-6 transition-transform duration-300 group-hover:rotate-6 group-hover:scale-105">
+                <div className="w-12 h-12 bg-white rounded-xl shadow-md flex-shrink-0 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
                    {index === 0 && <EfficientClosedLoopIcon />}
                    {index === 1 && <DataDrivenIcon />}
                    {index === 2 && <LocallyOptimizedIcon />}
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">{t(`value.${item}.title`)}</h3>
-                <p className="text-slate-600 leading-relaxed max-w-xs">{t(`value.${item}.desc`)}</p>
+                <div>
+                  <h3 className="text-base font-bold text-slate-900 mb-1">{t(`value.${item}.title`)}</h3>
+                  <p className="text-slate-500 text-sm leading-relaxed">{t(`value.${item}.desc`)}</p>
+                </div>
               </motion.div>
              ))}
           </div>
@@ -847,33 +867,35 @@ function App() {
       </section>
 
       {/* CTA Section */}
-      <section id="contact" className="py-24 relative z-10">
-        <div className="max-w-4xl mx-auto px-4 text-center">
+      <section id="contact" className="py-16 relative z-10">
+        <div className="max-w-3xl mx-auto px-4 text-center">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="bg-gradient-to-br from-indigo-50 to-blue-50 border border-blue-100 rounded-[3rem] p-12 md:p-20 shadow-2xl overflow-hidden relative"
+            transition={{ duration: 0.4 }}
+            className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-10 md:p-14 shadow-2xl overflow-hidden relative"
           >
             {/* Background decorations */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-              <div className="absolute -top-[50%] -left-[20%] w-[80%] h-[80%] bg-blue-200/20 rounded-full blur-3xl"></div>
-              <div className="absolute -bottom-[50%] -right-[20%] w-[80%] h-[80%] bg-purple-200/20 rounded-full blur-3xl"></div>
+              <div className="absolute -top-[30%] -right-[10%] w-[50%] h-[50%] bg-blue-500/10 rounded-full blur-3xl"></div>
+              <div className="absolute -bottom-[30%] -left-[10%] w-[50%] h-[50%] bg-indigo-500/10 rounded-full blur-3xl"></div>
             </div>
 
             <div className="relative z-10">
-              <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight text-slate-900">{t('cta.title')}</h2>
-              <p className="text-xl text-slate-600 mb-10 max-w-2xl mx-auto">{t('cta.subtitle')}</p>
-              <motion.a 
-                href="mailto:contact@insightaihk.com" 
-                className="inline-block px-10 py-5 bg-blue-600 text-white rounded-full font-bold text-lg shadow-lg shadow-blue-600/30 hover:bg-blue-700 transition-all"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {t('cta.button')}
-              </motion.a>
-              <p className="mt-8 text-slate-500 text-sm font-medium tracking-wide opacity-80 hover:opacity-100 transition-opacity">{t('cta.contact')}</p>
+              <h2 className="text-2xl md:text-4xl font-bold mb-4 leading-tight text-white">{t('cta.title')}</h2>
+              <p className="text-lg text-slate-300 mb-8">{t('cta.subtitle')}</p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <motion.a 
+                  href="mailto:contact@insightaihk.com" 
+                  className="inline-block px-8 py-4 bg-blue-600 text-white rounded-full font-bold shadow-lg shadow-blue-600/30 hover:bg-blue-500 transition-all"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {t('cta.button')}
+                </motion.a>
+                <span className="text-slate-400 text-sm">{t('cta.contact')}</span>
+              </div>
             </div>
           </motion.div>
         </div>
