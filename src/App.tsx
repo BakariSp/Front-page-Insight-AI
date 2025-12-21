@@ -101,6 +101,33 @@ function App() {
     }
   }, [mobileMenuOpen]);
 
+  // Helper function for comparison table icons
+  const renderComparisonIcon = (val: string) => {
+    if (val === 'check') {
+      return (
+        <svg className="w-5 h-5 text-green-500 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      );
+    }
+    if (val === 'cross') {
+      return (
+        <svg className="w-5 h-5 text-slate-200 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      );
+    }
+    if (val === 'minus') {
+      return (
+        <svg className="w-5 h-5 text-slate-300 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+        </svg>
+      );
+    }
+    return <span className="text-xs font-bold text-slate-700">{val}</span>;
+  };
+
   // Animation variants
   const fadeInUp: any = {
     hidden: { opacity: 0, y: 30 },
@@ -153,7 +180,7 @@ function App() {
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              {['mission', 'platform', 'partners'].map((item) => (
+              {['mission', 'platform', 'pricing', 'partners'].map((item) => (
                 <a 
                   key={item}
                   href={`#${item}`}
@@ -438,6 +465,265 @@ function App() {
         </div>
       </section>
 
+      {/* Pricing Section */}
+      <section id="pricing" className="py-24 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={fadeInUp}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">{t('pricing.title')}</h2>
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto">{t('pricing.subtitle')}</p>
+          </motion.div>
+
+          {/* Pricing Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20 items-stretch">
+            {(['essential', 'professional', 'enterprise'] as const).map((planKey, index) => {
+              const isPopular = planKey === 'professional';
+              const isEnterprise = planKey === 'enterprise';
+              const highlightColors: Record<string, string> = {
+                essential: 'bg-slate-700 hover:bg-slate-600',
+                professional: 'bg-blue-600 hover:bg-blue-500',
+                enterprise: 'bg-indigo-900 hover:bg-indigo-800'
+              };
+              const hoverBorderColors: Record<string, string> = {
+                essential: 'hover:border-slate-400 hover:shadow-slate-200/50',
+                professional: 'hover:border-blue-400 hover:shadow-blue-200/50',
+                enterprise: 'hover:border-indigo-400 hover:shadow-indigo-200/50'
+              };
+              
+              return (
+                <motion.div
+                  key={planKey}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ delay: index * 0.15, duration: 0.5 }}
+                  className={`group relative flex flex-col bg-white/80 backdrop-blur-sm rounded-3xl transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:bg-white hover:z-20 border ${
+                    isPopular 
+                      ? 'border-blue-500 shadow-2xl shadow-blue-500/20 ring-4 ring-blue-50 md:scale-105 z-10' 
+                      : `border-slate-200 shadow-lg ${hoverBorderColors[planKey]}`
+                  }`}
+                >
+                  {isPopular && (
+                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                      <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-blue-600 text-white text-xs font-bold uppercase tracking-wider shadow-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 fill-current" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                        </svg>
+                        Most Popular
+                      </span>
+                    </div>
+                  )}
+                  <div className="p-10 flex flex-col h-full">
+                    <div className="flex justify-between items-start mb-4">
+                      <div>
+                        <h3 className="text-2xl font-bold text-slate-900">{t(`pricing.plans.${planKey}.name`)}</h3>
+                        <p className="text-blue-600 font-semibold text-sm">{t(`pricing.plans.${planKey}.subtitle`)}</p>
+                      </div>
+                    </div>
+                    <div className="mb-2">
+                      <div className="flex items-baseline">
+                        <span className="text-4xl font-black tracking-tight text-slate-900">{t(`pricing.plans.${planKey}.price`)}</span>
+                        <span className="ml-1 text-slate-500 text-sm">{t(`pricing.plans.${planKey}.period`)}</span>
+                      </div>
+                      {isEnterprise && (
+                        <p className="text-xs text-indigo-600 font-medium mt-1">
+                          {t('pricing.plans.enterprise.annualized')}
+                        </p>
+                      )}
+                    </div>
+                    <p className="text-slate-600 text-sm leading-relaxed mb-8 flex-grow">
+                      {t(`pricing.plans.${planKey}.description`)}
+                    </p>
+                    <motion.a 
+                      href="#contact"
+                      className={`w-full py-4 rounded-2xl font-bold text-white transition-all flex items-center justify-center gap-2 ${highlightColors[planKey]} shadow-lg group-hover:shadow-xl`}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      {t(`pricing.plans.${planKey}.button`)}
+                      <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                      </svg>
+                    </motion.a>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          {/* Comparison Table */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-16"
+          >
+            <div className="text-center mb-12">
+              <h3 className="text-2xl font-bold text-slate-900 mb-3">{t('pricing.comparison.title')}</h3>
+              <p className="text-slate-500 max-w-2xl mx-auto">{t('pricing.comparison.subtitle')}</p>
+            </div>
+            
+            <div className="overflow-hidden bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl border border-slate-200 max-w-5xl mx-auto">
+              <div className="overflow-x-auto">
+                <table className="w-full text-center border-collapse">
+                  <thead>
+                    <tr className="bg-slate-50/80 border-b border-slate-200">
+                      <th className="px-6 py-6 text-left text-xs font-bold text-slate-400 uppercase tracking-widest w-2/5">{t('pricing.comparison.featureDetails')}</th>
+                      <th className="px-4 py-6 text-xs font-bold text-slate-900 border-l border-slate-100">Essential</th>
+                      <th className="px-4 py-6 text-xs font-bold text-blue-600 bg-blue-50/40 border-l border-slate-100">Professional</th>
+                      <th className="px-4 py-6 text-xs font-bold text-indigo-900 border-l border-slate-100">Enterprise</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-100">
+                    {/* Teaching Management */}
+                    <tr className="bg-slate-50/40">
+                      <td colSpan={4} className="px-6 py-3 text-left">
+                        <span className="text-xs font-black text-blue-600 uppercase tracking-widest">{t('pricing.comparison.categories.teaching')}</span>
+                      </td>
+                    </tr>
+                    {[
+                      { key: 'classManagement', e: 'check', p: 'check', t: 'check' },
+                      { key: 'ocr', e: 'check', p: 'check', t: 'check' },
+                      { key: 'basicReports', e: 'check', p: 'check', t: 'check' },
+                    ].map((item, idx) => (
+                      <tr key={idx} className="hover:bg-slate-50/50 transition-colors group">
+                        <td className="px-8 py-4 text-left">
+                          <span className="text-sm font-medium text-slate-700 group-hover:text-blue-700 transition-colors">{t(`pricing.comparison.features.${item.key}`)}</span>
+                        </td>
+                        <td className="px-4 py-4 border-l border-slate-100/50">{renderComparisonIcon(item.e)}</td>
+                        <td className="px-4 py-4 bg-blue-50/10 border-l border-slate-100/50">{renderComparisonIcon(item.p)}</td>
+                        <td className="px-4 py-4 border-l border-slate-100/50">{renderComparisonIcon(item.t)}</td>
+                      </tr>
+                    ))}
+                    
+                    {/* AI Native */}
+                    <tr className="bg-slate-50/40">
+                      <td colSpan={4} className="px-6 py-3 text-left">
+                        <span className="text-xs font-black text-blue-600 uppercase tracking-widest">{t('pricing.comparison.categories.ai')}</span>
+                      </td>
+                    </tr>
+                    {[
+                      { key: 'zhipuAi', e: 'minus', p: 'check', t: 'check' },
+                      { key: 'quizBuilder', e: 'cross', p: 'check', t: 'check' },
+                      { key: 'aiGrading', e: 'cross', p: 'check', t: 'check' },
+                    ].map((item, idx) => (
+                      <tr key={idx} className="hover:bg-slate-50/50 transition-colors group">
+                        <td className="px-8 py-4 text-left">
+                          <span className="text-sm font-medium text-slate-700 group-hover:text-blue-700 transition-colors">{t(`pricing.comparison.features.${item.key}`)}</span>
+                        </td>
+                        <td className="px-4 py-4 border-l border-slate-100/50">{renderComparisonIcon(item.e)}</td>
+                        <td className="px-4 py-4 bg-blue-50/10 border-l border-slate-100/50">{renderComparisonIcon(item.p)}</td>
+                        <td className="px-4 py-4 border-l border-slate-100/50">{renderComparisonIcon(item.t)}</td>
+                      </tr>
+                    ))}
+                    
+                    {/* Guided Learning */}
+                    <tr className="bg-slate-50/40">
+                      <td colSpan={4} className="px-6 py-3 text-left">
+                        <span className="text-xs font-black text-blue-600 uppercase tracking-widest">{t('pricing.comparison.categories.learning')}</span>
+                      </td>
+                    </tr>
+                    {[
+                      { key: 'socratic', e: 'cross', p: 'check', t: 'check' },
+                      { key: 'personalizedAnalysis', e: 'cross', p: 'check', t: 'check' },
+                    ].map((item, idx) => (
+                      <tr key={idx} className="hover:bg-slate-50/50 transition-colors group">
+                        <td className="px-8 py-4 text-left">
+                          <span className="text-sm font-medium text-slate-700 group-hover:text-blue-700 transition-colors">{t(`pricing.comparison.features.${item.key}`)}</span>
+                        </td>
+                        <td className="px-4 py-4 border-l border-slate-100/50">{renderComparisonIcon(item.e)}</td>
+                        <td className="px-4 py-4 bg-blue-50/10 border-l border-slate-100/50">{renderComparisonIcon(item.p)}</td>
+                        <td className="px-4 py-4 border-l border-slate-100/50">{renderComparisonIcon(item.t)}</td>
+                      </tr>
+                    ))}
+                    
+                    {/* Architecture & Security */}
+                    <tr className="bg-slate-50/40">
+                      <td colSpan={4} className="px-6 py-3 text-left">
+                        <span className="text-xs font-black text-blue-600 uppercase tracking-widest">{t('pricing.comparison.categories.architecture')}</span>
+                      </td>
+                    </tr>
+                    <tr className="hover:bg-slate-50/50 transition-colors group">
+                      <td className="px-8 py-4 text-left">
+                        <span className="text-sm font-medium text-slate-700 group-hover:text-blue-700 transition-colors">{t('pricing.comparison.features.dataStorage')}</span>
+                      </td>
+                      <td className="px-4 py-4 border-l border-slate-100/50"><span className="text-xs font-bold text-slate-700">{t('pricing.comparison.values.cloud')}</span></td>
+                      <td className="px-4 py-4 bg-blue-50/10 border-l border-slate-100/50"><span className="text-xs font-bold text-slate-700">{t('pricing.comparison.values.cloudDedicated')}</span></td>
+                      <td className="px-4 py-4 border-l border-slate-100/50"><span className="text-xs font-bold text-slate-700">{t('pricing.comparison.values.private')}</span></td>
+                    </tr>
+                    {[
+                      { key: 'gpuCluster', e: 'cross', p: 'cross', t: 'check' },
+                      { key: 'offlineMode', e: 'cross', p: 'cross', t: 'check' },
+                    ].map((item, idx) => (
+                      <tr key={idx} className="hover:bg-slate-50/50 transition-colors group">
+                        <td className="px-8 py-4 text-left">
+                          <span className="text-sm font-medium text-slate-700 group-hover:text-blue-700 transition-colors">{t(`pricing.comparison.features.${item.key}`)}</span>
+                        </td>
+                        <td className="px-4 py-4 border-l border-slate-100/50">{renderComparisonIcon(item.e)}</td>
+                        <td className="px-4 py-4 bg-blue-50/10 border-l border-slate-100/50">{renderComparisonIcon(item.p)}</td>
+                        <td className="px-4 py-4 border-l border-slate-100/50">{renderComparisonIcon(item.t)}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Suitability Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {(['essential', 'professional', 'enterprise'] as const).map((planKey, index) => {
+              const cardStyles: Record<string, string> = {
+                essential: 'bg-slate-100/60 border-slate-200/50',
+                professional: 'bg-blue-50 border-blue-100 shadow-lg',
+                enterprise: 'bg-indigo-50 border-indigo-100'
+              };
+              const titleStyles: Record<string, string> = {
+                essential: 'text-slate-800',
+                professional: 'text-blue-800',
+                enterprise: 'text-indigo-800'
+              };
+              const descStyles: Record<string, string> = {
+                essential: 'text-slate-600',
+                professional: 'text-blue-700',
+                enterprise: 'text-indigo-700'
+              };
+              const dotStyles: Record<string, string> = {
+                essential: 'bg-slate-400',
+                professional: 'bg-blue-600 animate-pulse',
+                enterprise: 'bg-indigo-600'
+              };
+              
+              return (
+                <motion.div
+                  key={planKey}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                  className={`p-8 rounded-3xl border ${cardStyles[planKey]}`}
+                >
+                  <h5 className={`font-bold mb-3 flex items-center ${titleStyles[planKey]}`}>
+                    <div className={`w-2 h-2 rounded-full mr-2 ${dotStyles[planKey]}`}></div>
+                    {t(`pricing.suitability.${planKey}.title`)}
+                  </h5>
+                  <p className={`text-sm leading-relaxed ${descStyles[planKey]}`}>
+                    {t(`pricing.suitability.${planKey}.description`)}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* Values Section */}
       <section className="py-24 bg-gradient-to-b from-white/40 to-white/10 backdrop-blur-sm relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -613,6 +899,7 @@ function App() {
               <ul className="space-y-3 text-sm text-slate-600">
                 <li><a href="#mission" className="hover:text-blue-600 transition-colors block py-1">{t('nav.mission')}</a></li>
                 <li><a href="#platform" className="hover:text-blue-600 transition-colors block py-1">{t('nav.platform')}</a></li>
+                <li><a href="#pricing" className="hover:text-blue-600 transition-colors block py-1">{t('nav.pricing')}</a></li>
                 <li><a href="#partners" className="hover:text-blue-600 transition-colors block py-1">{t('nav.partners')}</a></li>
               </ul>
             </div>

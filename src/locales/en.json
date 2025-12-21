@@ -2,6 +2,7 @@
   "nav": {
     "mission": "Mission",
     "platform": "Platform",
+    "pricing": "Pricing",
     "partners": "Partners",
     "contact": "Contact",
     "openMenu": "Open menu",
@@ -104,6 +105,81 @@
     "model": {
       "title": "Education-Specific AI Model",
       "desc": "Using 'education scenario optimized models', continuously iterated based on curriculum, school-based rubrics, lesson plan structures, and existing question banks — not generic models directly applied"
+    }
+  },
+  "pricing": {
+    "title": "Pricing Plans",
+    "subtitle": "Choose the right plan for your school's AI transformation journey",
+    "viewAll": "View Full Feature Comparison",
+    "plans": {
+      "essential": {
+        "name": "Essential",
+        "subtitle": "Digital Teaching Foundation",
+        "price": "HK$38,999",
+        "period": "/ year / per school",
+        "description": "Establish a robust digital assignment management system for your school with cloud-based and structured teaching resources.",
+        "button": "Learn About Essential"
+      },
+      "professional": {
+        "name": "Professional",
+        "subtitle": "AI-Native Teaching Empowerment",
+        "price": "HK$78,999",
+        "period": "starting / year / per school",
+        "description": "The go-to choice for school-wide AI transformation. Deep integration with Zhipu AI education models for full-process automation.",
+        "button": "Start AI Transformation"
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "subtitle": "Private Campus AI Center",
+        "price": "HK$218,999",
+        "period": "starting (includes first year hardware)",
+        "annualized": "~HK$73,000/year (amortized over 3 years)",
+        "description": "Built for pioneering schools. Establish an in-campus dedicated AI computing center ensuring ultimate privacy and performance.",
+        "button": "Schedule Expert Consultation"
+      }
+    },
+    "comparison": {
+      "title": "Full Feature Comparison",
+      "subtitle": "Clear feature progression paths to help you choose the right AI partner for your school's development stage.",
+      "featureDetails": "Feature Details",
+      "categories": {
+        "teaching": "Teaching Management Foundation",
+        "ai": "AI-Native Capabilities",
+        "learning": "Guided Learning",
+        "architecture": "Architecture & Security"
+      },
+      "features": {
+        "classManagement": "Smart Class/Assignment Lifecycle Management",
+        "ocr": "High-Precision OCR Question Recognition",
+        "basicReports": "Basic Learning Analytics Reports",
+        "zhipuAi": "Zhipu AI Dedicated Education Model",
+        "quizBuilder": "AI Quiz Builder (Auto Question Generation)",
+        "aiGrading": "AI Grading Agent (Complex Grammar Scoring)",
+        "socratic": "Socratic Student Guidance Tutor",
+        "personalizedAnalysis": "Personalized Dynamic Analysis & Error Push",
+        "dataStorage": "Data Storage Mode",
+        "gpuCluster": "GPU Local Computing Hardware Cluster",
+        "offlineMode": "Intranet Offline Operation Support"
+      },
+      "values": {
+        "cloud": "Cloud",
+        "cloudDedicated": "Cloud/Dedicated",
+        "private": "Private Deployment"
+      }
+    },
+    "suitability": {
+      "essential": {
+        "title": "Essential is suitable for:",
+        "description": "Schools with existing digital teaching materials that need more efficient assignment lifecycle management and basic auto-grading modules."
+      },
+      "professional": {
+        "title": "Professional is suitable for:",
+        "description": "Transformation-leading schools pursuing qualitative teaching change, seeking comprehensive AI for auto question generation, advanced grading, and guided learning."
+      },
+      "enterprise": {
+        "title": "Enterprise is suitable for:",
+        "description": "Benchmark schools with ultimate requirements for data security and computing performance, seeking to establish in-campus private AI clusters and dedicated knowledge bases."
+      }
     }
   },
   "cta": {

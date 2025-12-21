@@ -2,6 +2,7 @@
   "nav": {
     "mission": "使命",
     "platform": "平台",
+    "pricing": "方案",
     "partners": "合作夥伴",
     "contact": "聯繫",
     "openMenu": "開啟選單",
@@ -104,6 +105,81 @@
     "model": {
       "title": "教育專用 AI 模型",
       "desc": "採用「教育場景優化模型」，基於課綱、校本評分規準、教案結構與既有題庫持續迭代，非通用模型直接套用"
+    }
+  },
+  "pricing": {
+    "title": "方案選擇",
+    "subtitle": "根據學校的 AI 轉型階段選擇最合適的方案",
+    "viewAll": "查看完整功能對比",
+    "plans": {
+      "essential": {
+        "name": "Essential",
+        "subtitle": "數位教學基石",
+        "price": "HK$38,999",
+        "period": "/ 年 / 每校",
+        "description": "為學校建立穩健的數位作業管理體系，實現教學資源的雲端化與結構化。",
+        "button": "了解基礎方案"
+      },
+      "professional": {
+        "name": "Professional",
+        "subtitle": "AI 原生賦能教學",
+        "price": "HK$78,999",
+        "period": "起 / 年 / 每校",
+        "description": "全校級 AI 轉型首選。深度集成智谱 AI 等教育大模型，提供全流程自動化體驗。",
+        "button": "啟動 AI 轉型"
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "subtitle": "校園私有化 AI 中心",
+        "price": "HK$218,999",
+        "period": "起 (首年含硬件)",
+        "annualized": "約 HK$73,000/年（按3年攤分）",
+        "description": "為領航學校打造，建立校內專屬 AI 算力中心，確保極致隱私與極速性能。",
+        "button": "預約專家諮詢"
+      }
+    },
+    "comparison": {
+      "title": "方案功能全覽",
+      "subtitle": "清晰的功能進階路徑，助您根據學校發展階段選擇最合適的 AI 夥伴。",
+      "featureDetails": "功能詳情",
+      "categories": {
+        "teaching": "教學管理基石",
+        "ai": "AI 原生賦能",
+        "learning": "引導式學習",
+        "architecture": "架構與安全性"
+      },
+      "features": {
+        "classManagement": "智能班級/作業生命週期管理",
+        "ocr": "高精度 OCR 題目識別模組",
+        "basicReports": "基礎學情數據統計報表",
+        "zhipuAi": "智谱 AI 專屬教育模型驅動",
+        "quizBuilder": "AI Quiz Builder (自動化生題)",
+        "aiGrading": "AI 批改 Agent (支援複雜語法評分)",
+        "socratic": "Socratic 學生引導導師",
+        "personalizedAnalysis": "個人化動態分析與錯題推送",
+        "dataStorage": "數據存儲模式",
+        "gpuCluster": "GPU 本地算力硬件集群",
+        "offlineMode": "支援內網離線運行模式"
+      },
+      "values": {
+        "cloud": "雲端",
+        "cloudDedicated": "雲端/專用",
+        "private": "私有化部署"
+      }
+    },
+    "suitability": {
+      "essential": {
+        "title": "Essential 適合：",
+        "description": "已有數位教材基礎，僅需更高效的作業生命週期管理與基礎自動批改模組的學校。"
+      },
+      "professional": {
+        "title": "Professional 適合：",
+        "description": "追求教學質變，希望全面應用 AI 實現自動出題、高階批改及引導式學習的轉型領先學校。"
+      },
+      "enterprise": {
+        "title": "Enterprise 適合：",
+        "description": "對數據安全與算力性能有極致要求，希望建立校內私有 AI 集群與專屬知識庫的標竿學校。"
+      }
     }
   },
   "cta": {
