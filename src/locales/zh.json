@@ -2,8 +2,9 @@
   "nav": {
     "mission": "使命",
     "platform": "平台",
-    "pricing": "方案",
+    "pricing": "解決方案",
     "partners": "合作夥伴",
+    "funding": "『智』啟學教",
     "contact": "聯繫",
     "openMenu": "開啟選單",
     "switchLang": "Switch to English"
@@ -15,7 +16,7 @@
     "missionHighlight": "Insight AI 的使命，是協助學校在 AI 時代建立一套可靠的教學基建，使 AI 不僅是工具，而是推動教與學深度提升的伙伴。",
     "badge": "香港 K-12 AI 教育平台",
     "partnershipBadge": "清華智譜 AI 戰略合作",
-    "cta": "預約演示",
+    "cta": "預約諮詢",
     "ctaSecondary": "了解更多",
     "trustedBy": "合作夥伴信賴",
     "efficiency": "效率提升",
@@ -108,33 +109,28 @@
     }
   },
   "pricing": {
-    "title": "方案選擇",
-    "subtitle": "根據學校的 AI 轉型階段選擇最合適的方案",
+    "title": "聯合解決方案",
+    "subtitle": "Insight AI x Booster Robotics x GLM 聯合推出",
     "viewAll": "查看完整功能對比",
+    "contactForQuote": "聯繫諮詢報價",
+    "consultation": "預約專家諮詢",
     "plans": {
       "essential": {
-        "name": "Essential",
-        "subtitle": "數位教學基石",
-        "price": "HK$38,999",
-        "period": "/ 年 / 每校",
-        "description": "為學校建立穩健的數位作業管理體系，實現教學資源的雲端化與結構化。",
-        "button": "了解基礎方案"
+        "name": "方案 A：嘗鮮體驗包",
+        "subtitle": "AI Starter Experience",
+        "description": "低門檻入門方案。包含教學機器人與單科平台試用，適合 STEM/ICT 科目率先體驗。",
+        "button": "了解詳情"
       },
       "professional": {
-        "name": "Professional",
-        "subtitle": "AI 原生賦能教學",
-        "price": "HK$78,999",
-        "period": "起 / 年 / 每校",
-        "description": "全校級 AI 轉型首選。深度集成智谱 AI 等教育大模型，提供全流程自動化體驗。",
-        "button": "啟動 AI 轉型"
+        "name": "方案 B：AI 教學無憂計劃",
+        "subtitle": "Project Transformation",
+        "description": "18 個月全校轉型項目。包含雙機器人、全校全科平台授權及雙證書培訓，性價比首選。",
+        "button": "查看方案內容"
       },
       "enterprise": {
-        "name": "Enterprise",
-        "subtitle": "校園私有化 AI 中心",
-        "price": "HK$218,999",
-        "period": "起 (首年含硬件)",
-        "annualized": "約 HK$73,000/年（按3年攤分）",
-        "description": "為領航學校打造，建立校內專屬 AI 算力中心，確保極致隱私與極速性能。",
+        "name": "方案 C：本地私有雲",
+        "subtitle": "Premium On-Premise",
+        "description": "專注數據私隱與自主性。構建校內專屬 AI 運算中心 (4x RTX 4090)，確保極致性能。",
         "button": "預約專家諮詢"
       }
     },
@@ -169,23 +165,176 @@
     },
     "suitability": {
       "essential": {
-        "title": "Essential 適合：",
-        "description": "已有數位教材基礎，僅需更高效的作業生命週期管理與基礎自動批改模組的學校。"
+        "title": "方案 A 適合：",
+        "description": "希望在 ICT/STEM 科目率先引入 AI 教學體驗的學校。"
       },
       "professional": {
-        "title": "Professional 適合：",
-        "description": "追求教學質變，希望全面應用 AI 實現自動出題、高階批改及引導式學習的轉型領先學校。"
+        "title": "方案 B 適合：",
+        "description": "全方位推動數碼化轉型，需要軟硬件結合及完整培訓支援的學校。"
       },
       "enterprise": {
-        "title": "Enterprise 適合：",
-        "description": "對數據安全與算力性能有極致要求，希望建立校內私有 AI 集群與專屬知識庫的標竿學校。"
+        "title": "方案 C 適合：",
+        "description": "對數據安全與算力性能有極致要求，希望建立校內私有 AI 中心的學校。"
       }
     }
   },
+  "funding": {
+    "title": "「『智』啟學教」撥款計劃",
+    "subtitle": "支援中小學善用人工智能，實現各科目教師善用人工智能輔助教學，提升學與教效能",
+    "consultationDesc": "Insight AI 助您輕鬆達成教育局指標，最大化撥款效益",
+    "edbScheme": {
+      "badge": "教育局撥款計劃",
+      "grantAmount": "HK$500,000",
+      "grantLabel": "一筆過撥款",
+      "period": "2025/26學年 - 2027/28學年",
+      "periodLabel": "撥款使用期限",
+      "deadline": "2026年2月28日",
+      "deadlineLabel": "申請截止日期",
+      "usageTitle": "資金用途",
+      "usage1": "軟件",
+      "usage2": "硬件",
+      "usage3": "平台",
+      "usage4": "學與教資源",
+      "usage5": "校本人工智能應用方案",
+      "requirementsTitle": "計劃要求",
+      "req1": {
+        "title": "學校計劃",
+        "desc": "納入學校發展計劃及/或週年計劃"
+      },
+      "req2": {
+        "title": "AI輔助教學",
+        "desc": "最少於3個科目/課程範疇推行人工智能輔助教學"
+      },
+      "req3": {
+        "title": "公開課及經驗分享會",
+        "desc": "舉辦3次校內或校外人工智能輔助教學的公開課和經驗分享會"
+      },
+      "req4": {
+        "title": "學生活動",
+        "desc": "舉辦2個以提升學生人工智能素養與技能為重點的活動"
+      }
+    },
+    "flow": {
+      "title": "從申請到成功的完整路徑",
+      "subtitle": "一站式服務：我們陪您走過撥款申請的每一步",
+      "step1": { "title": "獲取撥款", "desc": "EDB 100K / 500K 資助" },
+      "step2": { "title": "部署硬件", "desc": "AI 機器人 + 運算設備" },
+      "step3": { "title": "平台上線", "desc": "全校帳號 + 資源庫" },
+      "step4": { "title": "教學應用", "desc": "課堂實踐 + 培訓支援" },
+      "step5": { "title": "達標交付", "desc": "KPI 報告 + 經驗分享" }
+    },
+    "comparison": {
+      "title": "AI 如何改變教師工作？",
+      "subtitle": "從繁瑣重複的批改工作，到高效智能的教學助手",
+      "before": {
+        "tag": "傳統模式",
+        "title": "堆積如山的作業",
+        "desc": "每天花數小時批改、記錄、統計"
+      },
+      "after": {
+        "tag": "AI 賦能",
+        "title": "智能高效工作站",
+        "desc": "AI 自動批改、即時反饋、數據報告"
+      }
+    },
+    "pipeline": {
+      "title": "三層 AI 教學架構",
+      "subtitle": "從底層數據到頂層教學，構建完整的智能閉環系統",
+      "layerLabel": "第",
+      "layer1": {
+        "name": "教學互動層",
+        "desc": "老師授課、學生學習 — 日常教學場景在這裡發生。老師可以專注於教學本身，而非繁瑣的行政工作。"
+      },
+      "layer2": {
+        "name": "AI 助手層",
+        "desc": "AI 機器人 + 智能批改 + OCR 識別 — 自動處理作業批改、錯題分析、學情報告，釋放教師時間。"
+      },
+      "layer3": {
+        "name": "數據飛輪核心",
+        "desc": "教育專用大模型 + 校本知識庫 — 老師的批改回饋不斷優化 AI 模型，越用越懂您的教學需求。"
+      },
+      "flywheel": "💡 數據飛輪效應：老師每一次修正 AI 的批改結果，都在訓練模型更懂校本標準，形成「越用越準」的正向循環。"
+    },
+    "analysis": {
+      "title": "真實的教學價值",
+      "subtitle": "用數據說話：AI 帶來的算力投入與效率提升",
+      "computing": {
+        "title": "龐大的多模態算力投入",
+        "stat": "6 億+",
+        "unit": "Tokens / 年",
+        "desc": "整合視覺 (Vision) 與語音 (Realtime) 模型。方案已全額包含高昂的 AI 算力成本，學校無需擔心後續開支。"
+      },
+      "efficiency": {
+        "title": "顯著節省教師工時",
+        "stat": "8,000+",
+        "unit": "小時 / 年",
+        "desc": "相當於釋放了 4-5 位全職助教的工作產出，讓老師從繁瑣的批改中解放，回歸教學育人。"
+      }
+    },
+    "schemes": {
+      "planA": {
+        "name": "方案 A：AI 啟動體驗包",
+        "price": "聯繫諮詢報價",
+        "hardware": "1x Booster K1 AI 機器人",
+        "software": "3 個月平台體驗版 (ICT/STEM)",
+        "training": "入門培訓 (2小時) + 機器人證書",
+        "highlight": "低門檻入門"
+      },
+      "planB": {
+        "name": "方案 B：AI 教學無憂計劃",
+        "price": "全方位覆蓋首選",
+        "tag": "校長首選",
+        "hardware": "2x Booster K1 高端教學機器人",
+        "software": "18 個月全校全科授權 (Standard 版)",
+        "softwareDesc": "含 OCR、AI 批改、AI Tutor、數據報告",
+        "training": "雙證書課程 + 每學期入校工作坊",
+        "highlight": "完整轉型方案 (18個月)"
+      },
+      "planC": {
+        "name": "方案 C：AI 本地化私有雲",
+        "price": "企業級配置",
+        "hardware": "本地 AI 運算中心 (4x RTX 4090 集群)",
+        "software": "12 個月校本授權 + 私有知識庫",
+        "training": "專人上門部署與系統維護",
+        "highlight": "極致隱私與性能"
+      }
+    },
+    "scheme1": {
+      "title": "『智』為學理 (AI for Science)",
+      "grant": "HK$100,000",
+      "desc": "教育局通函第 227/2024 號：初中科學科 AI 輔助教學先導計劃。",
+      "usage": "軟件、硬件、教師培訓、工作坊",
+      "deadline": "額滿即止"
+    },
+    "scheme2": {
+      "title": "『智』啟學教 (AI for Teaching)",
+      "grant": "HK$500,000",
+      "desc": "支援中小學善用人工智能，實現各科目教師善用 AI 輔助教學。",
+      "usage": "全校性 AI 應用、教師發展、學生學習活動",
+      "deadline": "2026年2月28日"
+    },
+    "support": {
+      "title": "全方位教學支援承諾",
+      "subtitle": "配合學校發展重點，提供適切的教學資源與技術支援",
+      "kpi1": {
+        "title": "跨學科資源配套",
+        "desc": "提供全面資源庫，覆蓋所有核心科目，支援多級別教學需求。"
+      },
+      "kpi2": {
+        "title": "公開課與教研支援",
+        "desc": "提供完整教案 (Lesson Plans) 及技術支援，協助舉辦公開課與跨校交流。"
+      },
+      "kpi3": {
+        "title": "學生 AI 素養活動",
+        "desc": "多元化工作坊：提供「雙證書課程」，涵蓋 AI 倫理、Prompt 工程及機器人應用。"
+      }
+    },
+    "cta": "獲取撥款申請方案"
+  },
   "cta": {
     "title": "與我們共建 AI 教育新生態",
-    "subtitle": "如需瞭解產品方案、校本導入與報價，或安排功能演示與技術對接",
-    "button": "預約演示",
+    "subtitle": "如需瞭解產品方案、校本導入，或安排功能演示與技術對接",
+    "button": "預約專家諮詢",
     "contact": "聯繫我們：contact@insightaihk.com"
   },
   "footer": {
