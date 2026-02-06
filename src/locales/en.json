@@ -1,50 +1,94 @@
 {
   "nav": {
-    "mission": "Vision",
+    "mission": "School-Based",
     "platform": "Platform",
     "pricing": "Solutions",
     "partners": "Partners",
     "funding": "EDB AI Grant",
+    "showcase": "Product",
     "contact": "Contact",
     "openMenu": "Open menu",
     "switchLang": "Switch to 繁中"
   },
   "hero": {
-    "title": "Insight AI",
-    "subtitle": "AI Infrastructure for K-12 Education",
-    "mission": "Making AI a trusted partner in every classroom — safe, effective, and designed for real teaching needs.",
-    "missionHighlight": "We help schools build reliable AI teaching infrastructure for the future.",
-    "badge": "HK K-12 AI Education Platform",
-    "partnershipBadge": "Zhipu AI Partner",
-    "cta": "Book Consultation",
+    "title": "Build Your School's Own",
+    "subtitle": "AI Teaching System",
+    "mission": "Not just another AI tool — we build an iterative, inheritable, and ever-improving school-based teaching asset. Smart grading · Data-driven decisions · Sustainable · Gets better with every use.",
+    "badge": "School-Based AI Teaching System",
+    "cta": "Book a 30-min Demo",
     "ctaSecondary": "Learn More",
-    "trustedBy": "Trusted By",
-    "efficiency": "Efficiency",
-    "partnerZhipu": "Zhipu AI",
-    "partnerBerkeley": "UC Berkeley",
-    "partnerCityu": "CityU HK"
+    "efficiency": "Efficiency"
   },
-  "mission": {
-    "title": "Our Vision",
-    "subtitle": "Building practical AI solutions with Hong Kong schools",
-    "direction1": {
-      "title": "AI Literacy",
-      "subtitle": "FUTURE-READY",
-      "desc": "Equip students to understand, use, and critically evaluate AI technologies.",
-      "points": ["Critical thinking", "Responsible AI use", "Self-directed learning"]
-    },
-    "direction2": {
-      "title": "Teacher Empowerment",
-      "subtitle": "EFFICIENCY",
-      "desc": "Reduce admin burden with AI-powered grading, feedback, and management.",
-      "points": ["Instant AI grading", "Smart management", "Focus on teaching"]
-    },
-    "direction3": {
-      "title": "Data Insights",
-      "subtitle": "ACTIONABLE",
-      "desc": "Identify learning gaps early with real-time analytics and intervention tools.",
-      "points": ["Live analytics", "Early alerts", "Personalized support"]
-    }
+  "painPoints": {
+    "title": "AI That Fits Seamlessly Into Every School's Teaching",
+    "subtitle": "Why school-based customization matters",
+    "leftTitle": "Every school uses the same generic AI",
+    "rightTitle": "With Insight AI",
+    "pains": [
+      "One-size-fits-all responses, no school identity",
+      "Data lost after use, no asset accumulation",
+      "Generic feedback, no student history awareness",
+      "Cannot connect test creation → grading → practice"
+    ],
+    "solutions": [
+      "Custom models matching your school's curriculum",
+      "Question banks, rubrics, templates → improve over time",
+      "Personalized feedback based on school-specific data",
+      "Full pipeline: create → grade → bank → practice → assets"
+    ],
+    "tagline": "Inject your school's unique data assets into AI infrastructure"
+  },
+  "schoolSystem": {
+    "title": "School-Based AI Teaching System",
+    "subtitle": "A tailor-made AI teaching system for every school — smart grading, data-driven decisions, sustainable, and ever-improving school-based assets",
+    "pillars": [
+      { "title": "Custom School Model", "desc": "AI adapts to your curriculum standards — full freedom, never forced" },
+      { "title": "Smarter Over Time", "desc": "Accumulated assets, reusable templates, new teachers inherit the best" },
+      { "title": "Smart Grading", "desc": "AI + teacher collaborative grading, auto-annotate, one-click confirm" },
+      { "title": "Data-Driven Decisions", "desc": "Learning analytics & progress tracking, auto-generate KPI reports" },
+      { "title": "Full-Loop Pipeline", "desc": "Create → Grade → Practice → Assets, visual teaching outcomes" }
+    ]
+  },
+  "showcase": {
+    "title": "Core Features",
+    "subtitle": "Highly flexible AI teaching toolkit — every feature can be customized to your school's needs",
+    "tabs": [
+      {
+        "label": "AI Toolkit",
+        "title": "Teacher Portal · AI Toolkit & Smart Assistants",
+        "desc": "All-in-one AI tools: email drafting, announcements, lesson planning, analytics reports, assignment grading, quiz generation — all freely configurable per school needs.",
+        "points": ["10+ AI assistant tools covering all teaching scenarios", "Teachers freely choose and use the tools they need", "School templates + school standards = personalized output"]
+      },
+      {
+        "label": "AI Studio",
+        "title": "Natural Language Driven · Auto-Generate Workflows",
+        "desc": "Tell AI what you want → Workflow auto-generated and reusable. Lesson prep, quiz creation, quick adjustments — adapt to different classes and needs.",
+        "points": ["Natural language driven, no technical background needed", "Workflows can be saved, reused, and shared", "Adjust difficulty, add details — iterate anytime"]
+      },
+      {
+        "label": "Smart Grading",
+        "title": "Smart Grading Assistant · Teacher + AI Collaboration",
+        "desc": "DSE exam alignment with precise marking scheme matching. Full question type coverage: English/Chinese/Math/Science + asset accumulation. AI auto-annotates differences, teachers confirm with one click.",
+        "points": ["MC / fill-in / essay / long-form writing fully supported", "Deep adaptation to your school's Marking Scheme", "Teacher comments become Workflows — improving over time"]
+      },
+      {
+        "label": "Quiz Builder",
+        "title": "AI Quiz Generation · School Question Bank",
+        "desc": "Unified question bank management with knowledge point design. AI generates quizzes — set difficulty and question types, auto-mark answers with detailed explanations.",
+        "points": ["Multi-subject knowledge point question generation", "One-click publish to class, assign and track instantly", "Question bank assets grow richer, new teachers use directly"]
+      }
+    ]
+  },
+  "flywheel": {
+    "title": "School Assets That Get Better Over Time",
+    "subtitle": "The more you invest, the richer the assets, the more precise the AI — this is your moat",
+    "stages": [
+      { "label": "Semester 1", "title": "Foundation", "items": ["Past papers + Marking Schemes", "Import existing question banks & templates"] },
+      { "label": "Semester 2", "title": "Adaptation", "items": ["Teachers adopt + integrate AI", "Quiz output improves, templates become visible"] },
+      { "label": "Semester 3", "title": "Expansion", "items": ["School question bank reaches 1000+ items", "Dozens of teaching templates, new teachers use directly"] },
+      { "label": "Semester 4", "title": "Data Loop", "items": ["School-wide rollout + student tracking", "True school-based teaching assets formed"] }
+    ],
+    "tagline": "Not just \"an AI tool\" — an iterative, inheritable, and composable teaching outcome library"
   },
   "platform": {
     "title": "One Platform, Whole School",
@@ -63,49 +107,6 @@
       "title": "Admins",
       "desc": "Full visibility, data-driven",
       "features": ["Quality dashboard", "Growth portfolios & alerts", "Decision support"]
-    }
-  },
-  "value": {
-    "title": "Why Insight AI",
-    "subtitle": "Built for Hong Kong education",
-    "item1": {
-      "title": "Efficient Workflow",
-      "desc": "Reusable rubrics and resources across classes"
-    },
-    "item2": {
-      "title": "Data-Driven",
-      "desc": "Track tasks, gaps, and trends in real-time"
-    },
-    "item3": {
-      "title": "Locally Optimized",
-      "desc": "Designed for K-12 and DSE curriculum"
-    }
-  },
-  "partners": {
-    "title": "Partners",
-    "subtitle": "World-class AI and academic collaboration",
-    "strategicPartner": "Strategic Partner",
-    "strategicPartnerDesc": "Powering our AI",
-    "researchTeam": "Research Team",
-    "researchTeamDesc": "Top researchers from leading institutions",
-    "tsinghua": "Tsinghua University",
-    "ucBerkeley": "UC Berkeley",
-    "cityuHk": "CityU HK",
-    "zhipu": {
-      "name": "Zhipu AI",
-      "desc": "GLM-4 education models, co-developed with Tsinghua"
-    },
-    "berkeley": {
-      "name": "UC Berkeley",
-      "desc": "CS & Data Science research"
-    },
-    "cityu": {
-      "name": "CityU HK",
-      "desc": "Local education AI research"
-    },
-    "model": {
-      "title": "Education-Optimized AI",
-      "desc": "Fine-tuned for curriculum, rubrics, and real teaching scenarios"
     }
   },
   "pricing": {
@@ -178,158 +179,32 @@
       }
     }
   },
-  "funding": {
-    "title": "「AI」for Learning and Teaching Grant",
-    "subtitle": "Supporting schools to leverage AI for subject teaching, enhancing learning and teaching effectiveness",
-    "consultationDesc": "Insight AI helps you achieve EDB KPIs and maximize funding value",
-    "edbScheme": {
-      "badge": "EDB Funding Scheme",
-      "grantAmount": "HK$500,000",
-      "grantLabel": "One-off Grant",
-      "period": "2025/26 - 2027/28 School Years",
-      "periodLabel": "Funding Period",
-      "deadline": "28 February 2026",
-      "deadlineLabel": "Application Deadline",
-      "usageTitle": "Fund Usage",
-      "usage1": "Software",
-      "usage2": "Hardware",
-      "usage3": "Platform",
-      "usage4": "Learning & Teaching Resources",
-      "usage5": "School-based AI Application",
-      "requirementsTitle": "Scheme Requirements",
-      "req1": {
-        "title": "School Planning",
-        "desc": "Incorporate into school development plan and/or annual plan"
-      },
-      "req2": {
-        "title": "AI-assisted Teaching",
-        "desc": "Implement AI-assisted teaching in at least 3 subjects/curriculum areas"
-      },
-      "req3": {
-        "title": "Open Lessons & Sharing",
-        "desc": "Organize 3 open lessons or experience sharing sessions on AI-assisted teaching"
-      },
-      "req4": {
-        "title": "Student Activities",
-        "desc": "Organize 2 activities focusing on enhancing students' AI literacy and skills"
-      }
+  "partners": {
+    "title": "Partners",
+    "subtitle": "World-class AI and academic collaboration",
+    "strategicPartner": "Strategic Partner",
+    "strategicPartnerDesc": "Powering our AI",
+    "researchTeam": "Research Team",
+    "researchTeamDesc": "Top researchers from leading institutions",
+    "tsinghua": "Tsinghua University",
+    "ucBerkeley": "UC Berkeley",
+    "cityuHk": "CityU HK",
+    "zhipu": {
+      "name": "Zhipu AI",
+      "desc": "GLM-4 education models, co-developed with Tsinghua"
     },
-    "flow": {
-      "title": "Your Complete Roadmap to Success",
-      "subtitle": "End-to-end support: We guide you through every step of the funding journey",
-      "step1": { "title": "Secure Funding", "desc": "EDB 100K / 500K Grant" },
-      "step2": { "title": "Deploy Hardware", "desc": "AI Robots + Computing" },
-      "step3": { "title": "Launch Platform", "desc": "School Accounts + Resources" },
-      "step4": { "title": "Classroom Use", "desc": "Teaching + Training" },
-      "step5": { "title": "Achieve KPIs", "desc": "Reports + Showcase" }
+    "berkeley": {
+      "name": "UC Berkeley",
+      "desc": "CS & Data Science research"
     },
-    "comparison": {
-      "title": "How AI Transforms Teacher Workflows",
-      "subtitle": "From tedious manual grading to intelligent, efficient teaching assistance",
-      "before": {
-        "tag": "Traditional",
-        "title": "Mountains of Paperwork",
-        "desc": "Hours spent grading, recording, tracking"
-      },
-      "after": {
-        "tag": "AI-Powered",
-        "title": "Smart Workstation",
-        "desc": "Auto-grading, instant feedback, data reports"
-      }
+    "cityu": {
+      "name": "CityU HK",
+      "desc": "Local education AI research"
     },
-    "pipeline": {
-      "title": "Three-Layer AI Teaching Architecture",
-      "subtitle": "From data foundation to classroom delivery — a complete intelligent ecosystem",
-      "layerLabel": "Layer",
-      "layer1": {
-        "name": "Teaching Interaction Layer",
-        "desc": "Teachers instruct, students learn — daily teaching happens here. Teachers can focus on teaching itself, not tedious admin tasks."
-      },
-      "layer2": {
-        "name": "AI Assistant Layer",
-        "desc": "AI Robot + Smart Grading + OCR Recognition — automatically handles assignment grading, error analysis, and learning reports, freeing up teacher time."
-      },
-      "layer3": {
-        "name": "Data Flywheel Core",
-        "desc": "Education-specific LLM + School Knowledge Base — teacher feedback continuously optimizes the AI model, getting smarter with every use."
-      },
-      "flywheel": "💡 Data Flywheel Effect: Every time a teacher corrects an AI grading result, it trains the model to better understand school-specific standards, creating a positive 'better with use' feedback loop."
-    },
-    "analysis": {
-      "title": "Real Teaching Value",
-      "subtitle": "The numbers speak: AI computing power and efficiency gains",
-      "computing": {
-        "title": "Massive Computing Value",
-        "stat": "600M+",
-        "unit": "Tokens / Year",
-        "desc": "Supports multimodal interactions (Vision + Voice) for whole-school usage. We cover the high cost of enterprise-grade AI tokens."
-      },
-      "efficiency": {
-        "title": "Teacher Time Saved",
-        "stat": "8,000+",
-        "unit": "Hours / Year",
-        "desc": "Releasing the workload equivalent of 4-5 full-time teaching assistants through automated grading and feedback."
-      }
-    },
-    "schemes": {
-      "planA": {
-        "name": "Plan A: Starter Experience",
-        "price": "Contact for Quote",
-        "hardware": "1x Booster K1 AI Robot",
-        "software": "3 Months Platform Trial (ICT/STEM)",
-        "training": "Introductory Training (2 Hours)",
-        "highlight": "Low Barrier Entry"
-      },
-      "planB": {
-        "name": "Plan B: AI Teaching Project",
-        "price": "Full Coverage Option",
-        "tag": "Most Popular",
-        "hardware": "2x Booster K1 AI Robots (Advanced SDK)",
-        "software": "18 Months Whole-School License",
-        "softwareDesc": "Unlimited subjects, AI Grading, OCR, AI Tutor",
-        "training": "Dual-Certificate Course + Regular Workshops",
-        "highlight": "Complete Transformation Solution"
-      },
-      "planC": {
-        "name": "Plan C: Private Cloud",
-        "price": "Enterprise Solution",
-        "hardware": "Local AI Cluster (4x RTX 4090)",
-        "software": "12 Months Whole-School License",
-        "training": "Specialized Deployment Training",
-        "highlight": "Ultimate Privacy & Performance"
-      }
-    },
-    "scheme1": {
-      "title": "『智』為學理 (AI for Science)",
-      "grant": "HK$100,000",
-      "desc": "Enhance junior secondary Science education with AI.",
-      "usage": "Software, Hardware, Training, Workshops",
-      "deadline": "Rolling Basis"
-    },
-    "scheme2": {
-      "title": "『智』啟學教 (AI for Teaching)",
-      "grant": "HK$500,000",
-      "desc": "Support primary & secondary schools to utilize AI across subjects.",
-      "usage": "Whole-school AI adoption, Teacher Training",
-      "deadline": "28 Feb 2026"
-    },
-    "support": {
-      "title": "Comprehensive Teaching Support",
-      "subtitle": "Supporting your school's development goals with tailored resources",
-      "kpi1": {
-        "title": "Curriculum & Resources",
-        "desc": "Full subject coverage (3 subjects x 2 levels) with our diverse resource library."
-      },
-      "kpi2": {
-        "title": "Public Lessons",
-        "desc": "Complete lesson plans and technical support for successful demonstrations."
-      },
-      "kpi3": {
-        "title": "Student Activities",
-        "desc": "AI Literacy workshops and dual-certificate courses for students."
-      }
-    },
-    "cta": "Get A Funding Proposal"
+    "model": {
+      "title": "Education-Optimized AI",
+      "desc": "Fine-tuned for curriculum, rubrics, and real teaching scenarios"
+    }
   },
   "cta": {
     "title": "Ready to Transform?",

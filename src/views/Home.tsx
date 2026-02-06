@@ -1,4 +1,3 @@
-// Rename current App.tsx logic to Home.tsx (simplified)
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -7,25 +6,6 @@ import LoginBackground from '../components/LoginBackground';
 import logo from '../logo.svg';
 
 // Icons
-const EfficientClosedLoopIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-blue-600">
-    <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
-  </svg>
-);
-
-const DataDrivenIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-indigo-600">
-    <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />
-  </svg>
-);
-
-const LocallyOptimizedIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-cyan-600">
-    <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
-  </svg>
-);
-
 const TeacherIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7">
     <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
@@ -62,11 +42,26 @@ const getRoleColor = (role: string) => {
   }
 };
 
+// Showcase images per tab
+const showcaseImages: string[][] = [
+  ['/demo/dashboard-home.png', '/demo/insight-tools.png'],
+  ['/demo/studio-chat.png', '/demo/studio-workflow.png'],
+  ['/demo/grading-app.png', '/demo/essay-grading.png'],
+  ['/demo/quiz-generator.png', '/demo/quiz-detail.png'],
+];
+
+// Pillar accent colors
+const pillarColors = ['#4361EE', '#7B5EBF', '#0891B2', '#10B981', '#F97316'];
+
+// Flywheel stage colors
+const stageColors = ['#4361EE', '#7B5EBF', '#0891B2', '#10B981'];
+
 function Home() {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeTab, setActiveTab] = useState(0);
 
   useEffect(() => {
     let ticking = false;
@@ -128,8 +123,8 @@ function Home() {
 
   const fadeInUp: any = {
     hidden: { opacity: 0, y: 30 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: { duration: 0.8, ease: "easeOut" }
     }
@@ -151,7 +146,7 @@ function Home() {
       <LoginBackground />
 
       {/* Navigation */}
-      <motion.nav 
+      <motion.nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled ? 'bg-white/80 backdrop-blur-md shadow-sm' : 'bg-transparent'
         }`}
@@ -161,8 +156,7 @@ function Home() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
-            {/* Logo */}
-            <motion.div 
+            <motion.div
               className="flex items-center gap-3 cursor-pointer"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 400 }}
@@ -173,11 +167,10 @@ function Home() {
                 INSIGHT AI
               </span>
             </motion.div>
-            
-            {/* Desktop Navigation */}
+
             <div className="hidden md:flex items-center space-x-8">
-              {['mission', 'platform', 'pricing', 'partners'].map((item) => (
-                <a 
+              {['mission', 'showcase', 'platform', 'pricing', 'partners'].map((item) => (
+                <a
                   key={item}
                   href={`#${item}`}
                   className="text-slate-600 hover:text-blue-600 font-medium transition-colors text-sm tracking-wide"
@@ -185,13 +178,13 @@ function Home() {
                   {t(`nav.${item}`)}
                 </a>
               ))}
-              <button 
+              <button
                 onClick={() => navigate('/funding')}
                 className="text-blue-600 hover:text-blue-800 font-bold transition-colors text-sm tracking-wide"
               >
                  {t('nav.funding')}
               </button>
-              <motion.button 
+              <motion.button
                 className="px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 border border-slate-200 rounded-full hover:bg-white/50 transition-all"
                 onClick={toggleLanguage}
                 whileHover={{ scale: 1.05 }}
@@ -209,9 +202,8 @@ function Home() {
               </motion.a>
             </div>
 
-            {/* Mobile Menu Button */}
             <div className="md:hidden">
-              <button 
+              <button
                 onClick={toggleMobileMenu}
                 className="p-2 text-slate-600 hover:text-slate-900"
               >
@@ -226,10 +218,9 @@ function Home() {
           </div>
         </div>
 
-        {/* Mobile Navigation Menu */}
         <AnimatePresence>
           {mobileMenuOpen && (
-            <motion.div 
+            <motion.div
               className="md:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-xl border-b border-slate-100 shadow-lg"
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: 'auto', opacity: 1 }}
@@ -237,8 +228,8 @@ function Home() {
               transition={{ duration: 0.3 }}
             >
               <div className="px-4 py-6 space-y-4">
-                {['mission', 'platform', 'partners', 'contact'].map((item) => (
-                  <a 
+                {['mission', 'showcase', 'platform', 'partners', 'contact'].map((item) => (
+                  <a
                     key={item}
                     href={`#${item}`}
                     onClick={() => setMobileMenuOpen(false)}
@@ -253,7 +244,7 @@ function Home() {
                 >
                    {t('nav.funding')}
                 </button>
-                <button 
+                <button
                   onClick={() => { toggleLanguage(); setMobileMenuOpen(false); }}
                   className="mt-4 text-sm font-medium text-slate-500"
                 >
@@ -265,54 +256,54 @@ function Home() {
         </AnimatePresence>
       </motion.nav>
 
-      {/* Hero Section */}
+      {/* ==================== HERO ==================== */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <motion.div 
+          <motion.div
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
             className="max-w-5xl mx-auto"
           >
-            <motion.div 
+            <motion.div
               variants={fadeInUp}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 backdrop-blur-sm border border-blue-100 text-blue-800 text-sm font-medium mb-8 shadow-sm"
             >
               <span className="flex h-2 w-2 rounded-full bg-blue-600 animate-pulse"></span>
               {t('hero.badge')}
             </motion.div>
-            
-            <motion.h1 
+
+            <motion.h1
               variants={fadeInUp}
               className="text-5xl md:text-7xl font-bold tracking-tight text-slate-900 mb-6 leading-[1.1]"
             >
               {t('hero.title')} <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
-                {t('hero.subtitle').split(' ').slice(0, 3).join(' ')}
+                {t('hero.subtitle')}
               </span>
             </motion.h1>
-            
-            <motion.p 
+
+            <motion.p
               variants={fadeInUp}
               className="text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed"
             >
               {t('hero.mission')}
             </motion.p>
 
-            <motion.div 
+            <motion.div
               variants={fadeInUp}
               className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
             >
-              <motion.a 
-                href="#contact" 
+              <motion.a
+                href="#contact"
                 className="px-8 py-4 bg-slate-900 text-white rounded-full font-semibold text-lg shadow-xl shadow-slate-900/20 hover:shadow-2xl hover:-translate-y-1 transition-all"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 {t('hero.cta')}
               </motion.a>
-              <motion.a 
-                href="#mission" 
+              <motion.a
+                href="#mission"
                 className="px-8 py-4 bg-white/80 backdrop-blur-sm text-slate-700 border border-slate-200 rounded-full font-semibold text-lg hover:bg-white transition-all"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -321,7 +312,7 @@ function Home() {
               </motion.a>
             </motion.div>
 
-            {/* Product Image with CSS Floating Animation for GPU acceleration */}
+            {/* Product Image */}
             <motion.div
               variants={fadeInUp}
               className="relative mx-auto w-full max-w-4xl rounded-2xl shadow-2xl border border-slate-200/50 overflow-hidden bg-white animate-float will-change-transform"
@@ -331,20 +322,19 @@ function Home() {
                  <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
                  <div className="w-3 h-3 rounded-full bg-green-400"></div>
               </div>
-              <img 
-                src="/demo/demo-1.png" 
-                alt="Dashboard Preview" 
+              <img
+                src="/demo/dashboard-home.png"
+                alt="Dashboard Preview"
                 className="w-full h-auto pt-8 bg-slate-50"
-                onError={(e) => {e.currentTarget.style.display='none'}} // Hide if image missing
+                onError={(e) => {e.currentTarget.style.display='none'}}
               />
               <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-white/20 to-transparent"></div>
             </motion.div>
-
           </motion.div>
         </div>
       </section>
 
-      {/* Mission Section (Split Layout) */}
+      {/* ==================== PAIN POINTS ==================== */}
       <section id="mission" className="py-24 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -354,91 +344,251 @@ function Home() {
             variants={fadeInUp}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">{t('mission.title')}</h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">{t('mission.subtitle')}</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">{t('painPoints.title')}</h2>
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto">{t('painPoints.subtitle')}</p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Left Column: Image */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* Left: Pain points */}
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="relative"
+              transition={{ duration: 0.6 }}
+              className="bg-white/60 backdrop-blur-sm border border-red-100 rounded-2xl p-8"
             >
-              <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-purple-600/20 rounded-3xl transform rotate-3 scale-105 blur-2xl"></div>
-              <img 
-                src="/demo/demo-2.png" 
-                alt="Platform Features" 
-                className="relative rounded-3xl shadow-2xl border border-white/50 bg-white/50 backdrop-blur-sm z-10"
-                onError={(e) => {e.currentTarget.style.display='none'}}
-              />
-              {/* Floating Badge - CSS animation for performance */}
-              <div 
-                className="absolute -bottom-6 -right-6 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 z-20 hidden md:block animate-float will-change-transform"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-green-600">
-                    ✓
+              <h3 className="text-lg font-bold text-red-500 mb-6">{t('painPoints.leftTitle')}</h3>
+              <div className="space-y-4">
+                {(t('painPoints.pains', { returnObjects: true }) as string[]).map((pain, idx) => (
+                  <div key={idx} className="flex items-start gap-3">
+                    <span className="text-red-500 font-bold text-lg mt-0.5 flex-shrink-0">✕</span>
+                    <span className="text-slate-700">{pain}</span>
                   </div>
-                  <div>
-                    <p className="text-xs text-slate-500 font-semibold uppercase">{t('hero.efficiency')}</p>
-                    <p className="text-lg font-bold text-slate-900">+40%</p>
-                  </div>
-                </div>
+                ))}
               </div>
             </motion.div>
 
-            {/* Right Column: Features List */}
-            <div className="space-y-5">
-              {['direction1', 'direction2', 'direction3'].map((direction, index) => {
-                const labelColors = [
-                  'bg-blue-600 text-white',
-                  'bg-emerald-600 text-white', 
-                  'bg-violet-600 text-white'
-                ];
-                return (
-                  <motion.div
-                    key={direction}
-                    initial={{ opacity: 0, x: 30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    transition={{ delay: index * 0.15, duration: 0.5 }}
-                    className="bg-white/60 backdrop-blur-sm border border-white/50 rounded-2xl p-5 shadow-lg hover:shadow-xl hover:bg-white/80 transition-shadow duration-300"
-                  >
-                    <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0">
-                        <div className="w-10 h-10 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600 font-bold text-lg">
-                          {index + 1}
-                        </div>
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-2 mb-1.5 flex-wrap">
-                          <h3 className="text-lg font-bold text-slate-900">{t(`mission.${direction}.title`)}</h3>
-                          <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${labelColors[index]}`}>
-                            {t(`mission.${direction}.subtitle`)}
-                          </span>
-                        </div>
-                        <p className="text-slate-600 text-sm leading-relaxed mb-2.5">{t(`mission.${direction}.desc`)}</p>
-                        <div className="flex flex-wrap gap-1.5">
-                          {(t(`mission.${direction}.points`, { returnObjects: true }) as string[]).map((point, idx) => (
-                            <span key={idx} className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-slate-100 text-slate-600">
-                              {point}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                );
-              })}
+            {/* Right: Solutions */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-white/60 backdrop-blur-sm border border-emerald-100 rounded-2xl p-8"
+            >
+              <h3 className="text-lg font-bold text-emerald-500 mb-6">{t('painPoints.rightTitle')}</h3>
+              <div className="space-y-4">
+                {(t('painPoints.solutions', { returnObjects: true }) as string[]).map((solution, idx) => (
+                  <div key={idx} className="flex items-start gap-3">
+                    <span className="text-emerald-500 font-bold text-lg mt-0.5 flex-shrink-0">✓</span>
+                    <span className="text-slate-700">{solution}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Tagline */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="mt-10 max-w-5xl mx-auto"
+          >
+            <div className="bg-blue-50 rounded-xl py-4 px-6 text-center">
+              <span className="text-blue-700 font-semibold text-sm md:text-base">{t('painPoints.tagline')}</span>
             </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ==================== SCHOOL-BASED SYSTEM (5 Pillars) ==================== */}
+      <section className="py-24 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={fadeInUp}
+            className="text-center mb-6"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">{t('schoolSystem.title')}</h2>
+            <p className="text-base text-slate-600 max-w-3xl mx-auto">{t('schoolSystem.subtitle')}</p>
+          </motion.div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-12">
+            {(t('schoolSystem.pillars', { returnObjects: true }) as { title: string; desc: string }[]).map((pillar, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-30px" }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                className="bg-white/70 backdrop-blur-sm border border-white/60 rounded-2xl p-5 shadow-lg hover:shadow-xl hover:bg-white/90 hover:-translate-y-1 transition-all duration-200 relative overflow-hidden"
+              >
+                {/* Top accent bar */}
+                <div className="absolute top-0 left-0 right-0 h-1" style={{ backgroundColor: pillarColors[index] }}></div>
+                <div className="text-3xl font-black mb-3" style={{ color: pillarColors[index] }}>
+                  {String(index + 1).padStart(2, '0')}
+                </div>
+                <h3 className="text-base font-bold text-slate-900 mb-2">{pillar.title}</h3>
+                <p className="text-sm text-slate-500 leading-relaxed">{pillar.desc}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Platform Section */}
+      {/* ==================== PRODUCT SHOWCASE (Tabs) ==================== */}
+      <section id="showcase" className="py-24 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={fadeInUp}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">{t('showcase.title')}</h2>
+            <p className="text-lg text-slate-600 max-w-3xl mx-auto">{t('showcase.subtitle')}</p>
+          </motion.div>
+
+          {/* Tab buttons */}
+          <div className="flex flex-wrap justify-center gap-2 mb-10">
+            {(t('showcase.tabs', { returnObjects: true }) as { label: string }[]).map((tab, idx) => (
+              <button
+                key={idx}
+                onClick={() => setActiveTab(idx)}
+                className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 ${
+                  activeTab === idx
+                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/20'
+                    : 'bg-white/60 text-slate-600 border border-slate-200 hover:bg-white hover:border-blue-200'
+                }`}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Tab content */}
+          <AnimatePresence mode="wait">
+            {(t('showcase.tabs', { returnObjects: true }) as { title: string; desc: string; points: string[] }[]).map((tab, idx) => (
+              activeTab === idx && (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.4 }}
+                  className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center"
+                >
+                  {/* Left: Text */}
+                  <div>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-4">{tab.title}</h3>
+                    <p className="text-slate-600 mb-6 leading-relaxed">{tab.desc}</p>
+                    <ul className="space-y-3">
+                      {tab.points.map((point, pidx) => (
+                        <li key={pidx} className="flex items-start gap-3 text-sm text-slate-700">
+                          <svg className="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                          </svg>
+                          <span>{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Right: Screenshots */}
+                  <div className="space-y-4">
+                    {showcaseImages[idx].map((imgSrc, imgIdx) => (
+                      <div key={imgIdx} className="relative rounded-xl shadow-xl border border-slate-200/50 overflow-hidden bg-white">
+                        <div className="absolute top-0 left-0 right-0 h-7 bg-slate-100 border-b border-slate-200 flex items-center gap-1.5 px-3 z-10">
+                          <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
+                          <div className="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
+                          <div className="w-2.5 h-2.5 rounded-full bg-green-400"></div>
+                        </div>
+                        <img
+                          src={imgSrc}
+                          alt={tab.title}
+                          className="w-full h-auto pt-7 bg-slate-50"
+                          onError={(e) => { e.currentTarget.style.display = 'none' }}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              )
+            ))}
+          </AnimatePresence>
+        </div>
+      </section>
+
+      {/* ==================== FLYWHEEL ==================== */}
+      <section className="py-24 bg-gradient-to-b from-white/40 to-white/10 backdrop-blur-sm relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={fadeInUp}
+            className="text-center mb-14"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">{t('flywheel.title')}</h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch">
+            {(t('flywheel.stages', { returnObjects: true }) as { label: string; title: string; items: string[] }[]).map((stage, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-30px" }}
+                transition={{ delay: index * 0.12, duration: 0.5 }}
+                className="relative bg-white/70 backdrop-blur-sm border border-white/60 rounded-2xl p-6 shadow-lg hover:shadow-xl hover:bg-white/90 transition-all duration-200 overflow-hidden"
+              >
+                {/* Top accent */}
+                <div className="absolute top-0 left-0 right-0 h-1" style={{ backgroundColor: stageColors[index] }}></div>
+                <span className="text-xs font-bold uppercase tracking-wider" style={{ color: stageColors[index] }}>
+                  {stage.label}
+                </span>
+                <h3 className="text-lg font-bold text-slate-900 mt-2 mb-4">{stage.title}</h3>
+                <ul className="space-y-2">
+                  {stage.items.map((item, iIdx) => (
+                    <li key={iIdx} className="flex items-start gap-2 text-sm text-slate-600">
+                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: stageColors[index] }}></span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Arrow to next (desktop only) */}
+                {index < 3 && (
+                  <div className="hidden lg:block absolute top-1/2 -right-3 transform -translate-y-1/2 z-10 text-slate-300 text-2xl">
+                    →
+                  </div>
+                )}
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Bottom tagline */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="mt-10"
+          >
+            <div className="bg-blue-50 rounded-xl py-4 px-6 text-center max-w-4xl mx-auto">
+              <span className="text-blue-700 font-semibold text-sm md:text-base italic">{t('flywheel.tagline')}</span>
+            </div>
+            <p className="text-center mt-4 text-sm text-slate-500">{t('flywheel.subtitle')}</p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ==================== PLATFORM ==================== */}
       <section id="platform" className="py-24 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -468,11 +618,11 @@ function Home() {
                   </div>
                   <h3 className="text-xl font-bold text-slate-900">{t(`platform.${role}.title`)}</h3>
                 </div>
-                
+
                 <p className="text-slate-500 text-sm font-medium mb-4">
                   {t(`platform.${role}.desc`)}
                 </p>
-                
+
                 <ul className="space-y-2.5 flex-grow">
                   {(t(`platform.${role}.features`, { returnObjects: true }) as string[]).map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-2.5 text-sm text-slate-700">
@@ -489,7 +639,7 @@ function Home() {
         </div>
       </section>
 
-      {/* Pricing Section (Modified to remove prices and focus on solutions) */}
+      {/* ==================== PRICING ==================== */}
       <section id="pricing" className="py-24 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -503,7 +653,6 @@ function Home() {
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">{t('pricing.subtitle')}</p>
           </motion.div>
 
-          {/* Pricing Cards - Modified */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20 items-stretch">
             {(['essential', 'professional', 'enterprise'] as const).map((planKey, index) => {
               const isPopular = planKey === 'professional';
@@ -517,7 +666,7 @@ function Home() {
                 professional: 'hover:border-blue-400 hover:shadow-blue-200/50',
                 enterprise: 'hover:border-indigo-400 hover:shadow-indigo-200/50'
               };
-              
+
               return (
                 <motion.div
                   key={planKey}
@@ -526,8 +675,8 @@ function Home() {
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ delay: index * 0.15, duration: 0.5 }}
                   className={`group relative flex flex-col bg-white/80 backdrop-blur-sm rounded-3xl transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:bg-white hover:z-20 border ${
-                    isPopular 
-                      ? 'border-blue-500 shadow-2xl shadow-blue-500/20 ring-4 ring-blue-50 md:scale-105 z-10' 
+                    isPopular
+                      ? 'border-blue-500 shadow-2xl shadow-blue-500/20 ring-4 ring-blue-50 md:scale-105 z-10'
                       : `border-slate-200 shadow-lg ${hoverBorderColors[planKey]}`
                   }`}
                 >
@@ -548,17 +697,16 @@ function Home() {
                         <p className="text-blue-600 font-semibold text-sm">{t(`pricing.plans.${planKey}.subtitle`)}</p>
                       </div>
                     </div>
-                    {/* Prices removed here */}
                     <div className="mb-4">
                        <span className="inline-block px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-xs font-bold uppercase tracking-wider">
                          {t('pricing.contactForQuote')}
                        </span>
                     </div>
-                    
+
                     <p className="text-slate-600 text-sm leading-relaxed mb-8 flex-grow">
                       {t(`pricing.plans.${planKey}.description`)}
                     </p>
-                    <motion.a 
+                    <motion.a
                       href={planKey === 'professional' ? '/funding' : '#contact'}
                       onClick={(e) => {
                          if (planKey === 'professional') {
@@ -594,7 +742,7 @@ function Home() {
               <h3 className="text-2xl font-bold text-slate-900 mb-3">{t('pricing.comparison.title')}</h3>
               <p className="text-slate-500 max-w-2xl mx-auto">{t('pricing.comparison.subtitle')}</p>
             </div>
-            
+
             <div className="overflow-hidden bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl border border-slate-200 max-w-5xl mx-auto">
               <div className="overflow-x-auto">
                 <table className="w-full text-center border-collapse">
@@ -607,7 +755,6 @@ function Home() {
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-100">
-                    {/* Teaching Management */}
                     <tr className="bg-slate-50/40">
                       <td colSpan={4} className="px-6 py-3 text-left">
                         <span className="text-xs font-black text-blue-600 uppercase tracking-widest">{t('pricing.comparison.categories.teaching')}</span>
@@ -627,8 +774,7 @@ function Home() {
                         <td className="px-4 py-4 border-l border-slate-100/50">{renderComparisonIcon(item.t)}</td>
                       </tr>
                     ))}
-                    
-                    {/* AI Native */}
+
                     <tr className="bg-slate-50/40">
                       <td colSpan={4} className="px-6 py-3 text-left">
                         <span className="text-xs font-black text-blue-600 uppercase tracking-widest">{t('pricing.comparison.categories.ai')}</span>
@@ -648,8 +794,7 @@ function Home() {
                         <td className="px-4 py-4 border-l border-slate-100/50">{renderComparisonIcon(item.t)}</td>
                       </tr>
                     ))}
-                    
-                    {/* Guided Learning */}
+
                     <tr className="bg-slate-50/40">
                       <td colSpan={4} className="px-6 py-3 text-left">
                         <span className="text-xs font-black text-blue-600 uppercase tracking-widest">{t('pricing.comparison.categories.learning')}</span>
@@ -668,8 +813,7 @@ function Home() {
                         <td className="px-4 py-4 border-l border-slate-100/50">{renderComparisonIcon(item.t)}</td>
                       </tr>
                     ))}
-                    
-                    {/* Architecture & Security */}
+
                     <tr className="bg-slate-50/40">
                       <td colSpan={4} className="px-6 py-3 text-left">
                         <span className="text-xs font-black text-blue-600 uppercase tracking-widest">{t('pricing.comparison.categories.architecture')}</span>
@@ -725,7 +869,7 @@ function Home() {
                 professional: 'Plan B',
                 enterprise: 'Plan C'
               };
-              
+
               return (
                 <motion.div
                   key={planKey}
@@ -751,48 +895,9 @@ function Home() {
         </div>
       </section>
 
-      {/* Values Section */}
-      <section className="py-16 bg-gradient-to-b from-white/40 to-white/10 backdrop-blur-sm relative z-10">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={fadeInUp}
-            className="text-center mb-10"
-          >
-            <h2 className="text-2xl font-bold text-slate-900">{t('value.title')}</h2>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-             {['item1', 'item2', 'item3'].map((item, index) => (
-              <motion.div
-                key={item}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ delay: index * 0.1, duration: 0.4 }}
-                className="flex items-start gap-4 p-4 rounded-xl bg-white/50 border border-white/60 group hover:bg-white/80 transition-all"
-              >
-                <div className="w-12 h-12 bg-white rounded-xl shadow-md flex-shrink-0 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
-                   {index === 0 && <EfficientClosedLoopIcon />}
-                   {index === 1 && <DataDrivenIcon />}
-                   {index === 2 && <LocallyOptimizedIcon />}
-                </div>
-                <div>
-                  <h3 className="text-base font-bold text-slate-900 mb-1">{t(`value.${item}.title`)}</h3>
-                  <p className="text-slate-500 text-sm leading-relaxed">{t(`value.${item}.desc`)}</p>
-                </div>
-              </motion.div>
-             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team & Partners Section */}
+      {/* ==================== PARTNERS ==================== */}
       <section id="partners" className="py-24 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Strategic Partner */}
           <div className="mb-24">
              <motion.div
               initial="hidden"
@@ -804,7 +909,7 @@ function Home() {
               <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">{t('partners.strategicPartner')}</h2>
               <p className="text-slate-500">{t('partners.strategicPartnerDesc')}</p>
             </motion.div>
-             <motion.div 
+             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -818,7 +923,6 @@ function Home() {
               </motion.div>
           </div>
 
-          {/* Research Team */}
           <div className="relative">
             <motion.div
               initial="hidden"
@@ -832,50 +936,31 @@ function Home() {
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-               <motion.div 
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ delay: 0.1, duration: 0.5 }}
-                className="bg-white/60 backdrop-blur-sm border border-slate-100 rounded-3xl p-8 hover:shadow-xl hover:bg-white hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center"
-              >
-                <div className="h-20 flex items-center justify-center mb-6 p-2 group-hover:scale-105 transition-transform duration-300">
-                   <img src="/tsinghua_logo.png" alt="Tsinghua University" className="h-full w-auto object-contain" />
-                </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-2">{t('partners.tsinghua')}</h3>
-              </motion.div>
-
-               <motion.div 
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ delay: 0.2, duration: 0.5 }}
-                className="bg-white/60 backdrop-blur-sm border border-slate-100 rounded-3xl p-8 hover:shadow-xl hover:bg-white hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center"
-              >
-                <div className="h-20 flex items-center justify-center mb-6 p-2 group-hover:scale-105 transition-transform duration-300">
-                   <img src="/UCB_logo.png" alt="UC Berkeley" className="h-full w-auto object-contain" />
-                </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-2">{t('partners.ucBerkeley')}</h3>
-              </motion.div>
-
-               <motion.div 
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ delay: 0.3, duration: 0.5 }}
-                className="bg-white/60 backdrop-blur-sm border border-slate-100 rounded-3xl p-8 hover:shadow-xl hover:bg-white hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center"
-              >
-                <div className="h-20 flex items-center justify-center mb-6 p-2 group-hover:scale-105 transition-transform duration-300">
-                   <img src="/cityU_logo.png" alt="CityU HK" className="h-full w-auto object-contain" />
-                </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-2">{t('partners.cityuHk')}</h3>
-              </motion.div>
+              {[
+                { logo: '/tsinghua_logo.png', alt: 'Tsinghua University', key: 'tsinghua' },
+                { logo: '/UCB_logo.png', alt: 'UC Berkeley', key: 'ucBerkeley' },
+                { logo: '/cityU_logo.png', alt: 'CityU HK', key: 'cityuHk' },
+              ].map((partner, index) => (
+                <motion.div
+                  key={partner.key}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ delay: (index + 1) * 0.1, duration: 0.5 }}
+                  className="bg-white/60 backdrop-blur-sm border border-slate-100 rounded-3xl p-8 hover:shadow-xl hover:bg-white hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center"
+                >
+                  <div className="h-20 flex items-center justify-center mb-6 p-2 group-hover:scale-105 transition-transform duration-300">
+                    <img src={partner.logo} alt={partner.alt} className="h-full w-auto object-contain" />
+                  </div>
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">{t(`partners.${partner.key}`)}</h3>
+                </motion.div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* ==================== CTA ==================== */}
       <section id="contact" className="py-16 relative z-10">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <motion.div
@@ -885,7 +970,6 @@ function Home() {
             transition={{ duration: 0.4 }}
             className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-10 md:p-14 shadow-2xl overflow-hidden relative"
           >
-            {/* Background decorations */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
               <div className="absolute -top-[30%] -right-[10%] w-[50%] h-[50%] bg-blue-500/10 rounded-full blur-3xl"></div>
               <div className="absolute -bottom-[30%] -left-[10%] w-[50%] h-[50%] bg-indigo-500/10 rounded-full blur-3xl"></div>
@@ -895,8 +979,8 @@ function Home() {
               <h2 className="text-2xl md:text-4xl font-bold mb-4 leading-tight text-white">{t('cta.title')}</h2>
               <p className="text-lg text-slate-300 mb-8">{t('cta.subtitle')}</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <motion.a 
-                  href="mailto:contact@insightaihk.com" 
+                <motion.a
+                  href="mailto:contact@insightaihk.com"
                   className="inline-block px-8 py-4 bg-blue-600 text-white rounded-full font-bold shadow-lg shadow-blue-600/30 hover:bg-blue-500 transition-all"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -910,7 +994,7 @@ function Home() {
         </div>
       </section>
 
-      {/* Footer */}
+      {/* ==================== FOOTER ==================== */}
       <footer className="bg-white/50 backdrop-blur-lg border-t border-slate-200 pt-16 pb-8 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
@@ -924,11 +1008,12 @@ function Home() {
                 <span className="text-lg">📍</span> {t('footer.location')}
               </p>
             </div>
-            
+
             <div>
               <h4 className="font-bold text-slate-900 mb-6">{t('footer.quickLinks')}</h4>
               <ul className="space-y-3 text-sm text-slate-600">
                 <li><a href="#mission" className="hover:text-blue-600 transition-colors block py-1">{t('nav.mission')}</a></li>
+                <li><a href="#showcase" className="hover:text-blue-600 transition-colors block py-1">{t('nav.showcase')}</a></li>
                 <li><a href="#platform" className="hover:text-blue-600 transition-colors block py-1">{t('nav.platform')}</a></li>
                 <li><a href="#pricing" className="hover:text-blue-600 transition-colors block py-1">{t('nav.pricing')}</a></li>
                 <li><a href="#partners" className="hover:text-blue-600 transition-colors block py-1">{t('nav.partners')}</a></li>
@@ -950,7 +1035,7 @@ function Home() {
               </a>
             </div>
           </div>
-          
+
           <div className="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-slate-500">{t('footer.rights')}</p>
             <p className="text-sm text-slate-500 flex items-center gap-1">

@@ -1,50 +1,94 @@
 {
   "nav": {
-    "mission": "使命",
+    "mission": "校本方案",
     "platform": "平台",
     "pricing": "解決方案",
     "partners": "合作夥伴",
     "funding": "『智』啟學教",
+    "showcase": "產品展示",
     "contact": "聯繫",
     "openMenu": "開啟選單",
     "switchLang": "Switch to English"
   },
   "hero": {
-    "title": "Insight AI",
-    "subtitle": "香港 K-12 教育的 AI 教學基礎設施",
-    "mission": "隨著人工智能迅速進入教育現場，香港學界正面臨一項關鍵挑戰：如何在安全、可控、具教育價值的前提下，讓 AI 真正為教師與學生帶來實質支援。",
-    "missionHighlight": "Insight AI 的使命，是協助學校在 AI 時代建立一套可靠的教學基建，使 AI 不僅是工具，而是推動教與學深度提升的伙伴。",
-    "badge": "香港 K-12 AI 教育平台",
-    "partnershipBadge": "清華智譜 AI 戰略合作",
-    "cta": "預約諮詢",
+    "title": "為每一所學校打造",
+    "subtitle": "專屬 AI 教學體系",
+    "mission": "不是給學校一個 AI 工具，而是打造可迭代、可傳承、越用越準的校本教學資產。教師智慧批改 · 數據驅動決策 · 可持續 · 越用越準的校本資產。",
+    "badge": "校本 AI 教學體系",
+    "cta": "預約 30 分鐘演示",
     "ctaSecondary": "了解更多",
-    "trustedBy": "合作夥伴信賴",
-    "efficiency": "效率提升",
-    "partnerZhipu": "智譜 AI",
-    "partnerBerkeley": "UC Berkeley",
-    "partnerCityu": "香港城大"
+    "efficiency": "效率提升"
   },
-  "mission": {
-    "title": "我們的教育願景",
-    "subtitle": "與香港學校共同探索更專業、更務實的 AI 教學模式",
-    "direction1": {
-      "title": "AI 素養教育",
-      "subtitle": "AI Literacy",
-      "desc": "協助學生理解、善用並能審視 AI，建立未來必需的判斷力與自主學習能力。",
-      "points": ["培養 AI 時代的批判思維", "建立負責任的 AI 使用觀念", "發展自主學習能力"]
-    },
-    "direction2": {
-      "title": "優化教師工作流程",
-      "subtitle": "Teacher Empowerment",
-      "desc": "以大模型技術支援作業管理、即時回饋與課堂教學，減少重複行政與批改壓力。",
-      "points": ["AI 輔助批改與即時回饋", "智能作業管理系統", "讓時間回到教學本身"]
-    },
-    "direction3": {
-      "title": "數據驅動的教學洞察",
-      "subtitle": "Data-Driven Insights",
-      "desc": "讓教師及早掌握學生學習弱項，並提供具有針對性的支援與介入。",
-      "points": ["即時學習分析報告", "弱項預警與介入建議", "因材施教的數據基礎"]
-    }
+  "painPoints": {
+    "title": "通過 AI 無縫融入每一所學校的教學場景",
+    "subtitle": "為什麼校本定製如此重要？",
+    "leftTitle": "所有學校面對同一個模型",
+    "rightTitle": "接入 Insight AI 後",
+    "pains": [
+      "千篇一律的回答，無法體現校本特色",
+      "數據即用即失，無法積累校本資產",
+      "千人一律的反饋，不了解學生歷史",
+      "無法貫穿出題→評估→練習全流程"
+    ],
+    "solutions": [
+      "定製專屬模型，匹配本校課程標準",
+      "題庫、評分、模板 → 越用越準",
+      "基於校本學情，個性化智慧回饋",
+      "出卷→批改→題庫→練習→資產 全鏈路"
+    ],
+    "tagline": "通過 AI 基礎設施，為校本 AI 注入本校獨有的數據資產"
+  },
+  "schoolSystem": {
+    "title": "校本 AI 教學體系",
+    "subtitle": "為每一所學校量身定做專屬的 AI 教學體系 — 讓教師智慧批改、數據驅動決策、可持續、越用越準的校本資產",
+    "pillars": [
+      { "title": "校本定製模型", "desc": "AI 適配本校課程標準，自由選擇、絕不強推套餐" },
+      { "title": "題庫越用越準", "desc": "資產積累，模板可復用，新教師站在前人肩膀上" },
+      { "title": "智慧批改系統", "desc": "AI + 教師協作評分，自動標注差異，一鍵確認或微調" },
+      { "title": "數據驅動決策", "desc": "學情分析與進步追蹤，自動生成 KPI 報告" },
+      { "title": "全鏈路閉環", "desc": "出卷→批改→練習→資產，產出可視化教學成果展" }
+    ]
+  },
+  "showcase": {
+    "title": "核心功能展示",
+    "subtitle": "自由度極高的 AI 教學工具集，每一項都可按校本需求個性化定製",
+    "tabs": [
+      {
+        "label": "AI 工具集",
+        "title": "教師端 · AI 工具集與智能助手",
+        "desc": "一站式 AI 輔助工具：郵件撰寫、通告撰寫、演講稿、教學策劃、學情報告、作業評分、測驗生成 — 所有工具均可按校本需求自由配置。",
+        "points": ["10+ AI 助手工具，覆蓋日常教學全場景", "教師自由選擇需要的工具，按需使用", "校本模板 + 校本標準 = 個性化輸出"]
+      },
+      {
+        "label": "AI Studio",
+        "title": "自然語言驅動 · AI 自動生成 Workflow",
+        "desc": "告訴 AI 你想做什麼 → Workflow 自動生成可復用。教師備課、課堂出題、快速微調 — 適配不同班級不同需求。",
+        "points": ["自然語言驅動，無需技術背景", "Workflow 可保存、可復用、可分享", "難度再高一點、再補一些說明 — 隨時微調"]
+      },
+      {
+        "label": "智能批改",
+        "title": "智能批改助手 · 教師 + AI 協作評分",
+        "desc": "支持 DSE 原卷適配，精準匹配評分標準。全題型覆蓋：英/中/文/數/理 + 資產積累。AI 自動標注差異，教師一鍵確認或微調。",
+        "points": ["選擇/填空/論述/長文寫作/長題目 全面支持", "本校 Marking Scheme 深度適配", "教師評語沉澱為 Workflow，越用越準"]
+      },
+      {
+        "label": "題庫出卷",
+        "title": "AI 智能出題 · 校本題庫管理",
+        "desc": "統一管理題庫，設計知識點與知識圖譜。AI 生成測驗 — 設定難度與題型，自動標記答案與詳細解析。",
+        "points": ["支持各學科知識點出題", "一鍵發佈到班級，快速指派並追蹤", "題庫資產越用越豐富，新教師直接使用"]
+      }
+    ]
+  },
+  "flywheel": {
+    "title": "越用越準的校本資產與飛輪效應",
+    "subtitle": "學校投入越大，資產越豐富，AI 體系越精準 — 這是一條護城河",
+    "stages": [
+      { "label": "第 1 學期", "title": "基礎建設", "items": ["歷程試卷 + Marking Scheme", "導入既有題庫與出卷模板"] },
+      { "label": "第 2 學期", "title": "教師適配", "items": ["教師適配使用 + 引入 AI", "出卷越來越準，模板可見可用"] },
+      { "label": "第 3 學期", "title": "題庫擴展", "items": ["校本題庫開放千題", "數十種教學模板，新教師直接使用"] },
+      { "label": "第 4 學期", "title": "數據閉環", "items": ["全級平推 + 學生歷程追蹤", "形成真正的校本教學資產"] }
+    ],
+    "tagline": "產出的不是「一個 AI 工具」，而是可迭代、可傳承、可聚合的教學成果庫"
   },
   "platform": {
     "title": "一個平台，服務全校",
@@ -63,49 +107,6 @@
       "title": "管理端",
       "desc": "運作與學習全流程的統一數據視圖",
       "features": ["全校教學質量儀表板", "學生成長檔案與預警系統", "數據驅動的決策支援"]
-    }
-  },
-  "value": {
-    "title": "核心價值",
-    "subtitle": "專為香港本土教育設計",
-    "item1": {
-      "title": "高效閉環",
-      "desc": "相同題組、規準與資源可跨班使用，降低重複備課與溝通成本"
-    },
-    "item2": {
-      "title": "數據驅動",
-      "desc": "每天的教與學行為都轉為可查詢的資訊：任務狀態、弱點知識點、成績走勢"
-    },
-    "item3": {
-      "title": "本土優化",
-      "desc": "完整採集香港老師與學生痛點，針對 K-12 與 DSE 課程體系深度優化"
-    }
-  },
-  "partners": {
-    "title": "技術與研究合作夥伴",
-    "subtitle": "頂尖學府與產業合作，為香港教育提供最強 AI 支援",
-    "strategicPartner": "戰略合作夥伴",
-    "strategicPartnerDesc": "提供強大的 AI 能力支援",
-    "researchTeam": "研究團隊來自",
-    "researchTeamDesc": "由世界級機構的頂尖研究人員驅動",
-    "tsinghua": "清華大學",
-    "ucBerkeley": "UC Berkeley",
-    "cityuHk": "香港城市大學",
-    "zhipu": {
-      "name": "清華智譜 AI",
-      "desc": "GLM-4 教育模型聯合研發，團隊來自清華、UC Berkeley、百度文心等頂尖機構"
-    },
-    "berkeley": {
-      "name": "UC Berkeley",
-      "desc": "計算機與數據科學領域研究合作"
-    },
-    "cityu": {
-      "name": "香港本地研究團隊",
-      "desc": "城市大學博士團隊主導香港教育 AI、人機互動研究"
-    },
-    "model": {
-      "title": "教育專用 AI 模型",
-      "desc": "採用「教育場景優化模型」，基於課綱、校本評分規準、教案結構與既有題庫持續迭代，非通用模型直接套用"
     }
   },
   "pricing": {
@@ -178,158 +179,32 @@
       }
     }
   },
-  "funding": {
-    "title": "「『智』啟學教」撥款計劃",
-    "subtitle": "支援中小學善用人工智能，實現各科目教師善用人工智能輔助教學，提升學與教效能",
-    "consultationDesc": "Insight AI 助您輕鬆達成教育局指標，最大化撥款效益",
-    "edbScheme": {
-      "badge": "教育局撥款計劃",
-      "grantAmount": "HK$500,000",
-      "grantLabel": "一筆過撥款",
-      "period": "2025/26學年 - 2027/28學年",
-      "periodLabel": "撥款使用期限",
-      "deadline": "2026年2月28日",
-      "deadlineLabel": "申請截止日期",
-      "usageTitle": "資金用途",
-      "usage1": "軟件",
-      "usage2": "硬件",
-      "usage3": "平台",
-      "usage4": "學與教資源",
-      "usage5": "校本人工智能應用方案",
-      "requirementsTitle": "計劃要求",
-      "req1": {
-        "title": "學校計劃",
-        "desc": "納入學校發展計劃及/或週年計劃"
-      },
-      "req2": {
-        "title": "AI輔助教學",
-        "desc": "最少於3個科目/課程範疇推行人工智能輔助教學"
-      },
-      "req3": {
-        "title": "公開課及經驗分享會",
-        "desc": "舉辦3次校內或校外人工智能輔助教學的公開課和經驗分享會"
-      },
-      "req4": {
-        "title": "學生活動",
-        "desc": "舉辦2個以提升學生人工智能素養與技能為重點的活動"
-      }
+  "partners": {
+    "title": "技術與研究合作夥伴",
+    "subtitle": "頂尖學府與產業合作，為香港教育提供最強 AI 支援",
+    "strategicPartner": "戰略合作夥伴",
+    "strategicPartnerDesc": "提供強大的 AI 能力支援",
+    "researchTeam": "研究團隊來自",
+    "researchTeamDesc": "由世界級機構的頂尖研究人員驅動",
+    "tsinghua": "清華大學",
+    "ucBerkeley": "UC Berkeley",
+    "cityuHk": "香港城市大學",
+    "zhipu": {
+      "name": "清華智譜 AI",
+      "desc": "GLM-4 教育模型聯合研發，團隊來自清華、UC Berkeley、百度文心等頂尖機構"
     },
-    "flow": {
-      "title": "從申請到成功的完整路徑",
-      "subtitle": "一站式服務：我們陪您走過撥款申請的每一步",
-      "step1": { "title": "獲取撥款", "desc": "EDB 100K / 500K 資助" },
-      "step2": { "title": "部署硬件", "desc": "AI 機器人 + 運算設備" },
-      "step3": { "title": "平台上線", "desc": "全校帳號 + 資源庫" },
-      "step4": { "title": "教學應用", "desc": "課堂實踐 + 培訓支援" },
-      "step5": { "title": "達標交付", "desc": "KPI 報告 + 經驗分享" }
+    "berkeley": {
+      "name": "UC Berkeley",
+      "desc": "計算機與數據科學領域研究合作"
     },
-    "comparison": {
-      "title": "AI 如何改變教師工作？",
-      "subtitle": "從繁瑣重複的批改工作，到高效智能的教學助手",
-      "before": {
-        "tag": "傳統模式",
-        "title": "堆積如山的作業",
-        "desc": "每天花數小時批改、記錄、統計"
-      },
-      "after": {
-        "tag": "AI 賦能",
-        "title": "智能高效工作站",
-        "desc": "AI 自動批改、即時反饋、數據報告"
-      }
+    "cityu": {
+      "name": "香港本地研究團隊",
+      "desc": "城市大學博士團隊主導香港教育 AI、人機互動研究"
     },
-    "pipeline": {
-      "title": "三層 AI 教學架構",
-      "subtitle": "從底層數據到頂層教學，構建完整的智能閉環系統",
-      "layerLabel": "第",
-      "layer1": {
-        "name": "教學互動層",
-        "desc": "老師授課、學生學習 — 日常教學場景在這裡發生。老師可以專注於教學本身，而非繁瑣的行政工作。"
-      },
-      "layer2": {
-        "name": "AI 助手層",
-        "desc": "AI 機器人 + 智能批改 + OCR 識別 — 自動處理作業批改、錯題分析、學情報告，釋放教師時間。"
-      },
-      "layer3": {
-        "name": "數據飛輪核心",
-        "desc": "教育專用大模型 + 校本知識庫 — 老師的批改回饋不斷優化 AI 模型，越用越懂您的教學需求。"
-      },
-      "flywheel": "💡 數據飛輪效應：老師每一次修正 AI 的批改結果，都在訓練模型更懂校本標準，形成「越用越準」的正向循環。"
-    },
-    "analysis": {
-      "title": "真實的教學價值",
-      "subtitle": "用數據說話：AI 帶來的算力投入與效率提升",
-      "computing": {
-        "title": "龐大的多模態算力投入",
-        "stat": "6 億+",
-        "unit": "Tokens / 年",
-        "desc": "整合視覺 (Vision) 與語音 (Realtime) 模型。方案已全額包含高昂的 AI 算力成本，學校無需擔心後續開支。"
-      },
-      "efficiency": {
-        "title": "顯著節省教師工時",
-        "stat": "8,000+",
-        "unit": "小時 / 年",
-        "desc": "相當於釋放了 4-5 位全職助教的工作產出，讓老師從繁瑣的批改中解放，回歸教學育人。"
-      }
-    },
-    "schemes": {
-      "planA": {
-        "name": "方案 A：AI 啟動體驗包",
-        "price": "聯繫諮詢報價",
-        "hardware": "1x Booster K1 AI 機器人",
-        "software": "3 個月平台體驗版 (ICT/STEM)",
-        "training": "入門培訓 (2小時) + 機器人證書",
-        "highlight": "低門檻入門"
-      },
-      "planB": {
-        "name": "方案 B：AI 教學無憂計劃",
-        "price": "全方位覆蓋首選",
-        "tag": "校長首選",
-        "hardware": "2x Booster K1 高端教學機器人",
-        "software": "18 個月全校全科授權 (Standard 版)",
-        "softwareDesc": "含 OCR、AI 批改、AI Tutor、數據報告",
-        "training": "雙證書課程 + 每學期入校工作坊",
-        "highlight": "完整轉型方案 (18個月)"
-      },
-      "planC": {
-        "name": "方案 C：AI 本地化私有雲",
-        "price": "企業級配置",
-        "hardware": "本地 AI 運算中心 (4x RTX 4090 集群)",
-        "software": "12 個月校本授權 + 私有知識庫",
-        "training": "專人上門部署與系統維護",
-        "highlight": "極致隱私與性能"
-      }
-    },
-    "scheme1": {
-      "title": "『智』為學理 (AI for Science)",
-      "grant": "HK$100,000",
-      "desc": "教育局通函第 227/2024 號：初中科學科 AI 輔助教學先導計劃。",
-      "usage": "軟件、硬件、教師培訓、工作坊",
-      "deadline": "額滿即止"
-    },
-    "scheme2": {
-      "title": "『智』啟學教 (AI for Teaching)",
-      "grant": "HK$500,000",
-      "desc": "支援中小學善用人工智能，實現各科目教師善用 AI 輔助教學。",
-      "usage": "全校性 AI 應用、教師發展、學生學習活動",
-      "deadline": "2026年2月28日"
-    },
-    "support": {
-      "title": "全方位教學支援承諾",
-      "subtitle": "配合學校發展重點，提供適切的教學資源與技術支援",
-      "kpi1": {
-        "title": "跨學科資源配套",
-        "desc": "提供全面資源庫，覆蓋所有核心科目，支援多級別教學需求。"
-      },
-      "kpi2": {
-        "title": "公開課與教研支援",
-        "desc": "提供完整教案 (Lesson Plans) 及技術支援，協助舉辦公開課與跨校交流。"
-      },
-      "kpi3": {
-        "title": "學生 AI 素養活動",
-        "desc": "多元化工作坊：提供「雙證書課程」，涵蓋 AI 倫理、Prompt 工程及機器人應用。"
-      }
-    },
-    "cta": "獲取撥款申請方案"
+    "model": {
+      "title": "教育專用 AI 模型",
+      "desc": "採用「教育場景優化模型」，基於課綱、校本評分規準、教案結構與既有題庫持續迭代，非通用模型直接套用"
+    }
   },
   "cta": {
     "title": "與我們共建 AI 教育新生態",
