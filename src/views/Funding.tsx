@@ -601,102 +601,133 @@ const Funding = () => {
         </div>
       </section>
 
-      {/* ========== Solutions / Schemes Section ========== */}
+      {/* ========== Solutions / Pricing Section ========== */}
       <section className="py-20 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
                 <h2 className="text-3xl font-bold text-slate-900 mb-4">{t('pricing.title')}</h2>
+                <p className="text-slate-500 max-w-2xl mx-auto">{t('pricing.subtitle')}</p>
             </div>
-            
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-            {/* Plan A */}
-            <motion.div 
-               whileHover={{ y: -5 }}
-               className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-slate-200 shadow-lg"
-            >
-               <span className="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold rounded-full mb-4">
-                  {t('funding.schemes.planA.highlight')}
-               </span>
-               <h3 className="text-2xl font-bold text-slate-900 mb-2">{t('funding.schemes.planA.name')}</h3>
-               <p className="text-slate-500 text-sm font-bold mb-6">{t('funding.schemes.planA.price')}</p>
-               
-               <ul className="space-y-4 mb-8">
-                   <li className="flex items-start gap-3">
-                       <CheckIcon />
-                       <span className="text-sm text-slate-600">{t('funding.schemes.planA.hardware')}</span>
-                   </li>
-                   <li className="flex items-start gap-3">
-                       <CheckIcon />
-                       <span className="text-sm text-slate-600">{t('funding.schemes.planA.software')}</span>
-                   </li>
-                   <li className="flex items-start gap-3">
-                       <CheckIcon />
-                       <span className="text-sm text-slate-600">{t('funding.schemes.planA.training')}</span>
-                   </li>
-               </ul>
-            </motion.div>
 
-            {/* Plan B (Featured) */}
-            <motion.div 
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+            {/* Platform (Featured) */}
+            <motion.div
                whileHover={{ y: -5 }}
-               className="bg-white/95 backdrop-blur-sm rounded-3xl p-8 border-2 border-blue-500 shadow-2xl relative transform scale-105 z-10"
+               className="bg-white/95 backdrop-blur-sm rounded-3xl p-8 border-2 border-blue-500 shadow-2xl relative lg:scale-105 z-10"
             >
                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-blue-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
-                   {t('funding.schemes.planB.tag')}
+                   {t('funding.schemes.platform.tag')}
                </div>
-               <h3 className="text-2xl font-bold text-slate-900 mb-2">{t('funding.schemes.planB.name')}</h3>
-               <p className="text-blue-600 text-sm font-bold mb-6">{t('funding.schemes.planB.price')}</p>
-               
-               <ul className="space-y-4 mb-8">
-                   <li className="flex items-start gap-3">
+               <span className="inline-block px-3 py-1 bg-blue-50 text-blue-600 text-xs font-bold rounded-full mb-4">
+                  {t('funding.schemes.platform.highlight')}
+               </span>
+               <h3 className="text-2xl font-bold text-slate-900 mb-2">{t('funding.schemes.platform.name')}</h3>
+               <div className="flex items-baseline gap-1 mb-1">
+                  <span className="text-4xl font-black text-blue-600">HK$11,999</span>
+                  <span className="text-slate-500 text-sm font-medium">/ {i18n.language === 'zh' ? '年' : 'Year'}</span>
+               </div>
+               <p className="inline-block px-3 py-1 bg-green-50 text-green-700 rounded-full text-xs font-bold mb-6">
+                  {t('pricing.platform.trial')}
+               </p>
+
+               <ul className="space-y-3 mb-8">
+                   {(t('funding.schemes.platform.items', { returnObjects: true }) as string[]).map((item, idx) => (
+                     <li key={idx} className="flex items-start gap-3">
                        <CheckIcon />
-                       <span className="text-sm font-bold text-slate-800">{t('funding.schemes.planB.hardware')}</span>
-                   </li>
-                   <li className="flex items-start gap-3">
-                       <CheckIcon />
-                       <div>
-                            <span className="block text-sm font-bold text-slate-800">{t('funding.schemes.planB.software')}</span>
-                            <span className="text-xs text-slate-500">{t('funding.schemes.planB.softwareDesc')}</span>
-                       </div>
-                   </li>
-                   <li className="flex items-start gap-3">
-                       <CheckIcon />
-                       <span className="text-sm font-bold text-slate-800">{t('funding.schemes.planB.training')}</span>
-                   </li>
+                       <span className="text-sm font-medium text-slate-700">{item}</span>
+                     </li>
+                   ))}
                </ul>
-               
-               <a href="mailto:contact@insightaihk.com" className="block w-full py-3 bg-blue-600 text-white text-center font-bold rounded-xl hover:bg-blue-700 transition-colors">
-                   {t('cta.button')}
+
+               <a href="mailto:contact@insightaihk.com" className="block w-full py-3 bg-blue-600 text-white text-center font-bold rounded-xl hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/20">
+                   {t('pricing.platform.button')}
                </a>
             </motion.div>
 
-            {/* Plan C */}
-            <motion.div 
+            {/* On-site Service */}
+            <motion.div
                whileHover={{ y: -5 }}
-               className="bg-slate-900/95 backdrop-blur-sm text-white rounded-3xl p-8 border border-slate-800 shadow-lg"
+               className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-slate-200 shadow-lg"
             >
-               <span className="inline-block px-3 py-1 bg-indigo-500/20 text-indigo-300 text-xs font-bold rounded-full mb-4">
-                  {t('funding.schemes.planC.highlight')}
+               <span className="inline-block px-3 py-1 bg-amber-50 text-amber-700 text-xs font-bold rounded-full mb-4">
+                  {t('funding.schemes.onsite.highlight')}
                </span>
-               <h3 className="text-2xl font-bold text-white mb-2">{t('funding.schemes.planC.name')}</h3>
-               <p className="text-slate-400 text-sm font-bold mb-6">{t('funding.schemes.planC.price')}</p>
-               
-               <ul className="space-y-4 mb-8">
-                   <li className="flex items-start gap-3">
+               <h3 className="text-2xl font-bold text-slate-900 mb-2">{t('funding.schemes.onsite.name')}</h3>
+               <div className="flex items-baseline gap-1 mb-6">
+                  <span className="text-3xl font-black text-slate-800">HK$49,900</span>
+                  <span className="text-slate-500 text-sm font-medium">/ {i18n.language === 'zh' ? '學期' : 'Semester'}</span>
+               </div>
+
+               <ul className="space-y-3 mb-8">
+                   {(t('funding.schemes.onsite.items', { returnObjects: true }) as string[]).map((item, idx) => (
+                     <li key={idx} className="flex items-start gap-3">
                        <CheckIcon />
-                       <span className="text-sm text-slate-300">{t('funding.schemes.planC.hardware')}</span>
-                   </li>
-                   <li className="flex items-start gap-3">
-                       <CheckIcon />
-                       <span className="text-sm text-slate-300">{t('funding.schemes.planC.software')}</span>
-                   </li>
-                   <li className="flex items-start gap-3">
-                       <CheckIcon />
-                       <span className="text-sm text-slate-300">{t('funding.schemes.planC.training')}</span>
-                   </li>
+                       <span className="text-sm text-slate-600">{item}</span>
+                     </li>
+                   ))}
                </ul>
+
+               <a href="mailto:contact@insightaihk.com" className="block w-full py-3 bg-slate-800 text-white text-center font-bold rounded-xl hover:bg-slate-700 transition-colors">
+                   {t('pricing.onsite.button')}
+               </a>
+            </motion.div>
+
+            {/* Robot (Partner) */}
+            <motion.div
+               whileHover={{ y: -5 }}
+               className="bg-gradient-to-b from-slate-900 to-slate-800 backdrop-blur-sm text-white rounded-3xl p-8 border border-slate-700 shadow-lg relative overflow-hidden"
+            >
+               <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2"></div>
+               <div className="relative z-10">
+                 <div className="flex items-center gap-2 mb-4">
+                   <span className="inline-block px-3 py-1 bg-indigo-500/20 text-indigo-300 text-xs font-bold rounded-full">
+                      {t('funding.schemes.robot.highlight')}
+                   </span>
+                   <span className="inline-block px-2 py-0.5 bg-amber-500/20 text-amber-300 text-xs font-bold rounded-full">
+                      {t('funding.schemes.robot.partnerBadge')}
+                   </span>
+                 </div>
+                 <h3 className="text-2xl font-bold text-white mb-2">{t('funding.schemes.robot.name')}</h3>
+                 <div className="flex items-baseline gap-1 mb-6">
+                    <span className="text-3xl font-black text-white">HK$200,000</span>
+                    <span className="text-slate-400 text-sm font-medium">{i18n.language === 'zh' ? '起' : 'onwards'}</span>
+                 </div>
+
+                 <ul className="space-y-3 mb-8">
+                     {(t('funding.schemes.robot.items', { returnObjects: true }) as string[]).map((item, idx) => (
+                       <li key={idx} className="flex items-start gap-3">
+                         <CheckIcon />
+                         <span className="text-sm text-slate-300">{item}</span>
+                       </li>
+                     ))}
+                 </ul>
+
+                 <a href="mailto:contact@insightaihk.com" className="block w-full py-3 bg-white/10 border border-white/20 text-white text-center font-bold rounded-xl hover:bg-white/20 transition-colors">
+                     {t('pricing.robot.button')}
+                 </a>
+               </div>
             </motion.div>
           </div>
+
+          {/* Robot Partner Note */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-10 max-w-3xl mx-auto"
+          >
+            <div className="bg-slate-50/80 border border-slate-200 rounded-2xl p-6 flex items-start gap-4">
+              <div className="w-10 h-10 bg-indigo-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 text-indigo-600">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
+                </svg>
+              </div>
+              <div>
+                <h4 className="font-bold text-slate-800 mb-1">{t('pricing.robotPartner.title')}</h4>
+                <p className="text-sm text-slate-600 leading-relaxed">{t('pricing.robotPartner.desc')}</p>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 

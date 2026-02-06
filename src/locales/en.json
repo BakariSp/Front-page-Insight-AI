@@ -110,73 +110,63 @@
     }
   },
   "pricing": {
-    "title": "Our Solutions",
-    "subtitle": "Tailored packages for every stage of AI adoption",
-    "viewAll": "Compare All Features",
-    "contactForQuote": "Contact for Quote",
+    "title": "Solutions & Pricing",
+    "subtitle": "Flexible platform subscription + partner hardware options, mix and match as needed",
     "consultation": "Expert Consultation",
-    "plans": {
-      "essential": {
-        "name": "Plan A: Experience",
-        "subtitle": "AI Starter Pack",
-        "description": "Low barrier entry for STEM/ICT. Includes robot hardware and short-term platform trial.",
-        "button": "Learn More"
-      },
-      "professional": {
-        "name": "Plan B: Transformation",
-        "subtitle": "AI Teaching Project",
-        "description": "Comprehensive 18-month program. Full hardware, whole-school platform, and dual-certificate training.",
-        "button": "View Details"
-      },
-      "enterprise": {
-        "name": "Plan C: Private Cloud",
-        "subtitle": "On-Premise AI Center",
-        "description": "Enterprise-grade local GPU cluster for ultimate privacy and performance.",
-        "button": "Talk to Expert"
-      }
+    "platform": {
+      "badge": "Core Product",
+      "name": "Insight AI Teaching Platform",
+      "price": "11,999",
+      "priceUnit": "HKD / Year",
+      "trial": "First 3 Months Free Trial",
+      "trialDesc": "Zero risk — cancel anytime during trial",
+      "desc": "Whole-school AI teaching platform with unlimited subjects and classes. Covers grading, quiz generation, and learning analytics.",
+      "features": [
+        "All subjects, unlimited classes",
+        "AI Smart Grading + OCR Recognition",
+        "AI Quiz Builder for auto-generation",
+        "Socratic Student Tutor",
+        "Learning analytics & personalized reports",
+        "School question bank & template assets",
+        "Powered by Zhipu AI Education Model"
+      ],
+      "button": "Start Free Trial"
     },
-    "comparison": {
-      "title": "Feature Comparison",
-      "subtitle": "See what's included in each plan",
-      "featureDetails": "Features",
-      "categories": {
-        "teaching": "Core Management",
-        "ai": "AI Capabilities",
-        "learning": "Guided Learning",
-        "architecture": "Infrastructure"
-      },
-      "features": {
-        "classManagement": "Class & Assignment Management",
-        "ocr": "OCR Question Recognition",
-        "basicReports": "Basic Analytics",
-        "zhipuAi": "Zhipu AI Education Model",
-        "quizBuilder": "AI Quiz Builder",
-        "aiGrading": "AI Grading Agent",
-        "socratic": "Socratic Tutor",
-        "personalizedAnalysis": "Personalized Analysis",
-        "dataStorage": "Data Storage",
-        "gpuCluster": "Local GPU Cluster",
-        "offlineMode": "Offline Support"
-      },
-      "values": {
-        "cloud": "Cloud",
-        "cloudDedicated": "Dedicated",
-        "private": "Private"
-      }
+    "onsite": {
+      "badge": "On-Site Service",
+      "name": "One-Semester Deployment + Support",
+      "price": "49,900",
+      "priceUnit": "HKD / Semester",
+      "desc": "Our professional team provides a full semester of on-campus deployment, training, and technical support.",
+      "features": [
+        "On-campus platform setup & account config",
+        "Hands-on teacher training workshops",
+        "Classroom follow-up & tech support",
+        "End-of-semester impact report & KPI review",
+        "Open lesson & sharing session assistance"
+      ],
+      "button": "Learn More"
     },
-    "suitability": {
-      "essential": {
-        "title": "Best for:",
-        "description": "Schools starting their AI journey with STEM/ICT pilots."
-      },
-      "professional": {
-        "title": "Best for:",
-        "description": "Schools committed to whole-school digital transformation."
-      },
-      "enterprise": {
-        "title": "Best for:",
-        "description": "Schools requiring top-tier data privacy and local computing power."
-      }
+    "robot": {
+      "badge": "Partner Hardware",
+      "name": "AI Teaching Robot Package",
+      "price": "200,000",
+      "priceUnit": "HKD onwards",
+      "partnerNote": "Provided by partner: Booster Robotics",
+      "desc": "AI teaching robot integration for STEM/ICT classroom interaction. Seamlessly integrates with the Insight AI platform.",
+      "features": [
+        "Booster K1 AI Teaching Robot",
+        "Seamless Insight AI platform integration",
+        "Robot programming SDK support",
+        "Dual-certificate training (AI + Robotics)",
+        "Hardware warranty & tech support"
+      ],
+      "button": "Contact Partner"
+    },
+    "robotPartner": {
+      "title": "Hardware Partners",
+      "desc": "Insight AI works closely with Booster Robotics and other hardware partners to deliver integrated software + hardware solutions. Contact us for partner pricing on robots and other equipment.",
+      "partners": ["Booster Robotics — AI Teaching Robots"]
     }
   },
   "partners": {
@@ -300,31 +290,40 @@
       }
     },
     "schemes": {
-      "planA": {
-        "name": "Plan A: Starter Experience",
-        "price": "Contact for Quote",
-        "hardware": "1x Booster K1 AI Robot",
-        "software": "3 Months Platform Trial (ICT/STEM)",
-        "training": "Introductory Training (2 Hours)",
-        "highlight": "Low Barrier Entry"
+      "platform": {
+        "name": "Insight AI Teaching Platform",
+        "price": "HK$11,999 / Year",
+        "tag": "Recommended",
+        "items": [
+          "All subjects, unlimited classes",
+          "AI Smart Grading + OCR Recognition",
+          "AI Quiz Builder + Analytics",
+          "First 3 months free trial"
+        ],
+        "highlight": "Whole-School AI Platform"
       },
-      "planB": {
-        "name": "Plan B: AI Teaching Project",
-        "price": "Full Coverage Option",
-        "tag": "Most Popular",
-        "hardware": "2x Booster K1 AI Robots (Advanced SDK)",
-        "software": "18 Months Whole-School License",
-        "softwareDesc": "Unlimited subjects, AI Grading, OCR, AI Tutor",
-        "training": "Dual-Certificate Course + Regular Workshops",
-        "highlight": "Complete Transformation Solution"
+      "onsite": {
+        "name": "On-Site Service Package",
+        "price": "HK$49,900 / Semester",
+        "items": [
+          "On-campus deployment & training",
+          "Classroom follow-up & tech support",
+          "End-of-semester report & KPIs",
+          "Open lesson & sharing assistance"
+        ],
+        "highlight": "One-Semester On-Site Support"
       },
-      "planC": {
-        "name": "Plan C: Private Cloud",
-        "price": "Enterprise Solution",
-        "hardware": "Local AI Cluster (4x RTX 4090)",
-        "software": "12 Months Whole-School License",
-        "training": "Specialized Deployment Training",
-        "highlight": "Ultimate Privacy & Performance"
+      "robot": {
+        "name": "AI Robot Package",
+        "price": "From HK$200,000",
+        "partnerBadge": "Via Partner",
+        "items": [
+          "Booster K1 AI Teaching Robot",
+          "Deep platform integration",
+          "Dual-certificate training",
+          "Hardware warranty & support"
+        ],
+        "highlight": "Integrated Hardware Solution"
       }
     },
     "scheme1": {
